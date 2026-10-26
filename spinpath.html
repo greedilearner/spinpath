@@ -1,0 +1,1027 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Spin a topic that connects to what you already know, learn it in context, then explain it out loud.">
+<title>Spinpath</title>
+
+<style>
+:root{
+  color-scheme:light dark;
+  --bg:#f3f0e9; --surface:#ffffff; --ink:#100e0a; --muted:#4f4a40; --line:#cfc9ba;
+  --accent:#b23a08; --ok:#2f5d41;
+  --menu-bg:#ffffff; --menu-ink:#000000; --menu-hover:#e8e8e8;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:ui-monospace,"SF Mono",Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#121110; --surface:#1f1d1a; --ink:#f7f4ec; --muted:#bdb7a9; --line:#3a3630; --accent:#ff9a70; --ok:#9fd0af; --menu-bg:#000000; --menu-ink:#ffffff; --menu-hover:#2e2e2e}
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 var(--sans)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.page{max-width:680px;margin:0 auto;padding:28px 20px 72px}
+.top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:36px}
+.mark{margin:0;font:600 1.15rem var(--serif);letter-spacing:.01em}
+.link{background:none;border:0;padding:0;color:var(--muted);font:inherit;font-size:.85rem;cursor:pointer;text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line)}
+.link:hover{color:var(--ink)}
+
+.tabs{display:flex;gap:26px;border-bottom:1px solid var(--line)}
+.tab{background:none;border:0;border-bottom:2px solid transparent;margin-bottom:-1px;padding:8px 0;color:var(--muted);font:inherit;font-size:.92rem;cursor:pointer}
+.tab[aria-checked=true]{color:var(--ink);border-bottom-color:var(--accent)}
+.blurb{margin:12px 0 22px;color:var(--muted);font-size:.9rem}
+
+.scope-row{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+select{appearance:none;background:transparent;color:var(--ink);border:0;border-bottom:1px solid var(--line);border-radius:0;padding:4px 18px 4px 0;font:inherit;font-size:.92rem;cursor:pointer;
+  background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);
+  background-position:calc(100% - 8px) 55%,calc(100% - 4px) 55%;background-size:4px 4px;background-repeat:no-repeat}
+/* custom dropdown: white menu / black text in light mode, black menu / white text in dark mode */
+.dd-src{display:none!important}
+.dd{position:relative;display:inline-block}
+.dd-btn{position:relative;background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:4px 22px 4px 0;color:var(--ink);font:inherit;font-size:.92rem;cursor:pointer;text-align:left}
+.dd-btn::after{content:"";position:absolute;right:4px;top:50%;width:6px;height:6px;border-right:1.5px solid var(--muted);border-bottom:1.5px solid var(--muted);transform:translateY(-70%) rotate(45deg)}
+.dd-btn[aria-expanded=true]{border-bottom-color:var(--accent)}
+.dd-list{position:absolute;left:0;top:calc(100% + 8px);z-index:30;min-width:100%;width:max-content;max-width:min(340px,90vw);max-height:60vh;overflow:auto;margin:0;padding:6px 0;list-style:none;
+  background:var(--menu-bg);color:var(--menu-ink);border:1px solid var(--menu-ink);border-radius:2px;box-shadow:0 10px 30px #0004;outline:0}
+.dd-list li{padding:9px 16px;cursor:pointer;font-size:.95rem;line-height:1.35;color:var(--menu-ink)}
+.dd-list li:hover,.dd-list li.act{background:var(--menu-hover)}
+.dd-list li[aria-selected=true]{font-weight:700}
+.dd-list li[aria-selected=true]::before{content:"\2713\00a0"}
+.progress{margin:0;display:flex;align-items:center;gap:10px;font:.78rem var(--mono);color:var(--muted)}
+.meter{display:block;width:90px;height:3px;background:var(--line)}
+.meter b{display:block;height:100%;width:0;background:var(--ok);transition:width .4s}
+
+.stage{padding:52px 0 30px;min-height:240px}
+.kicker{margin:0 0 14px;font:.74rem var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.topic{margin:0;font:500 clamp(2rem,7vw,3.1rem)/1.1 var(--serif);letter-spacing:-.01em;text-wrap:balance}
+.hook{margin:16px 0 0;max-width:46ch;color:var(--muted);font:italic 1.05rem/1.5 var(--serif);min-height:1.5em}
+.read{display:inline-block;margin-top:14px;color:var(--ink);font-size:.92rem;text-underline-offset:4px;text-decoration-color:var(--accent)}
+.read[hidden]{display:none}
+.read::after{content:" \2197"}
+.stage.spinning .topic{animation:drop .12s ease-out}
+.stage.spinning .kicker{color:var(--accent)}
+@keyframes drop{from{transform:translateY(-.18em);opacity:.25}to{transform:none;opacity:1}}
+
+.actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.btn{background:transparent;color:var(--ink);border:1px solid var(--ink);border-radius:2px;padding:11px 22px;font:inherit;font-size:.92rem;font-weight:600;cursor:pointer;transition:background .15s,color .15s}
+.btn:hover:not(:disabled){background:var(--ink);color:var(--bg)}
+.btn.solid{background:var(--ink);color:var(--bg)}
+.btn.solid:hover{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+.btn.quiet{border-color:transparent;color:var(--muted);padding-inline:10px}
+.btn.quiet:hover:not(:disabled){background:none;color:var(--ink)}
+.btn:disabled{opacity:.35;cursor:not-allowed}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+.card{margin-top:44px;border-top:1px solid var(--line)}
+.row3{display:grid;grid-template-columns:130px 1fr;gap:6px 24px;padding:18px 0;border-bottom:1px solid var(--line)}
+.row3 h4{margin:3px 0 0;font:.72rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.row3 p{margin:0}
+.row3 ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.row3 li b{font-weight:600}
+.row3 li span{color:var(--muted)}
+.row3 ul.qs li::before{content:"\2192\00a0";color:var(--accent)}
+.chips{display:flex;flex-wrap:wrap;gap:6px 14px}
+.chip{background:none;border:0;border-bottom:1px solid var(--line);padding:1px 0;color:var(--ink);font:inherit;font-size:.92rem;cursor:pointer}
+.chip:hover{border-bottom-color:var(--accent)}
+.chip.done{color:var(--ok)}
+.links a{color:var(--ink);margin-right:18px;font-size:.9rem;text-underline-offset:3px;text-decoration-color:var(--line)}
+.links a:hover{text-decoration-color:var(--accent)}
+@media (max-width:520px){.row3{grid-template-columns:1fr}}
+
+.map{margin-top:64px}
+.map-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+.map-head h3{margin:0;font:600 1.05rem var(--serif)}
+.map-tools{display:flex;gap:16px}
+.map-list{list-style:none;margin:0;padding:0}
+.node{display:grid;grid-template-columns:20px 1fr auto;gap:12px;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--line)}
+.node input{accent-color:var(--ok);margin:0;width:16px;height:16px;align-self:center}
+.area{padding:22px 0 6px;font:.72rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line)}
+.node .t{background:none;border:0;padding:0;text-align:left;color:var(--ink);font:inherit;cursor:pointer}
+.node .t:hover{color:var(--accent)}
+.node .s{font:.74rem var(--mono);color:var(--muted)}
+.node.done .t{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--ok)}
+.node.done .s{color:var(--ok)}
+.node.ready .s{color:var(--accent)}
+.node.locked .t{color:var(--muted)}
+.foot{margin-top:40px;font:.78rem var(--mono);color:var(--muted)}
+
+dialog{background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:2px;padding:24px;width:min(340px,calc(100% - 32px))}
+dialog::backdrop{background:#0008}
+dialog form{display:grid;gap:18px}
+dialog h2{margin:0;font:600 1.1rem var(--serif)}
+dialog label{display:grid;gap:6px;font-size:.9rem}
+dialog label.row{display:flex;align-items:center;gap:10px}
+input[type=range]{accent-color:var(--accent);width:100%}
+input[type=checkbox]{accent-color:var(--accent)}
+
+.overlay{position:fixed;inset:0;z-index:10;background:var(--bg);display:grid;place-items:center;padding:20px}
+.overlay[hidden]{display:none}
+.overlay-inner{width:min(560px,100%);display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.o-phase{margin:0;font:.74rem var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.o-topic{margin:0;font:500 clamp(1.4rem,4.5vw,2rem)/1.2 var(--serif)}
+.arc{list-style:none;margin:0;padding:0;display:flex;gap:18px;font:.8rem var(--mono);color:var(--muted)}
+.arc li.hit{color:var(--ok)}
+.digits{margin:10px 0 0;font:300 clamp(5rem,22vw,9rem)/1 var(--sans);font-variant-numeric:tabular-nums;letter-spacing:-.04em}
+.line{display:block;width:100%;height:2px;background:var(--line)}
+.line b{display:block;height:100%;width:0;background:var(--accent)}
+.o-status{margin:0;font:italic 1.2rem var(--serif);color:var(--muted)}
+.overlay.done .digits{color:var(--accent)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="page" id="app">
+  <header class="top">
+    <h1 class="mark">Spinpath</h1>
+    <button class="link" id="settingsBtn" type="button" aria-haspopup="dialog">Settings</button>
+  </header>
+
+  <nav class="tabs" role="radiogroup" aria-label="Mode" id="modes"></nav>
+  <p class="blurb" id="blurb"></p>
+
+  <div class="scope-row">
+    <label class="sr" for="scope">Scope</label>
+    <label class="sr" for="drill">Drill</label>
+    <select id="drill" hidden></select>
+    <select id="scope"></select>
+    <p class="progress" id="progress" hidden><span id="progressText"></span><i class="meter"><b id="bar"></b></i></p>
+  </div>
+
+  <main class="stage" aria-live="polite">
+    <p class="kicker" id="kicker">Ready</p>
+    <h2 class="topic" id="topic">Spin to begin.</h2>
+    <p class="hook" id="hook"></p>
+    <a class="read" id="readLink" target="_blank" rel="noopener noreferrer" hidden>Open the article</a>
+  </main>
+
+  <div class="actions">
+    <button class="btn solid" id="spin" type="button">Spin</button>
+    <button class="btn" id="start" type="button" disabled>Start timer</button>
+    <button class="btn quiet" id="learned" type="button" hidden>Mark learned</button>
+  </div>
+
+  <article class="card" id="card" hidden></article>
+
+  <section class="map" id="mapSection" hidden>
+    <div class="map-head">
+      <h3 id="mapTitle">Roadmap</h3>
+      <div class="map-tools">
+        <button class="link" id="exportBtn" type="button">Export</button>
+        <button class="link" id="importBtn" type="button">Import</button>
+        <button class="link" id="resetBtn" type="button">Reset</button>
+        <input type="file" id="importFile" accept="application/json" hidden>
+      </div>
+    </div>
+    <ol class="map-list" id="mapList"></ol>
+  </section>
+
+  <footer class="foot"><span id="streak"></span></footer>
+</div>
+
+<dialog id="settings">
+  <form method="dialog">
+    <h2>Settings</h2>
+    <label>Speech <output id="speechOut"></output> min
+      <input type="range" id="speechMin" min="1" max="10" step="1"></label>
+    <label>Study / research <output id="researchOut"></output> min
+      <input type="range" id="researchMin" min="1" max="60" step="1"></label>
+    <label class="row"><input type="checkbox" id="sound"> Sound</label>
+    <button class="btn solid">Done</button>
+  </form>
+</dialog>
+
+<div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-label="Timer" hidden>
+  <div class="overlay-inner">
+    <p class="o-phase" id="oPhase"></p>
+    <p class="o-topic" id="oTopic"></p>
+    <ol class="arc" id="arc" aria-label="Speech arc"></ol>
+    <p class="digits" id="digits" role="timer">0:00</p>
+    <i class="line"><b id="line"></b></i>
+    <p class="o-status" id="oStatus" aria-live="polite"></p>
+    <div class="actions">
+      <button class="btn solid" id="oMain" type="button"></button>
+      <button class="btn quiet" id="oClose" type="button">Close</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* Spinpath content. All original. c(id, title, prereqs, hook, uses[[domain, how]], asks[]) */
+const c = (id, title, prereqs, hook, uses, asks, area) => ({ id, title, prereqs, hook, uses, asks, area });
+const A = (area) => (id, title, prereqs, hook, uses, asks) => c(id, title, prereqs, hook, uses, asks, area);
+
+/* "prereqs" are soft: related ideas that help, never a gate. A spin can land on any unlearned concept. */
+const ai1 = A("Foundations"), ai2 = A("Retrieval"), ai3 = A("Building"), ai4 = A("Shipping");
+
+window.ROADMAPS = [
+  {
+    id: "ai", label: "AI engineer",
+    blurb: "Everything you'd pick up on the way to building real LLM products.",
+    concepts: [
+      ai1("llm", "What an LLM actually is", [], "A next-token predictor trained on a huge amount of text, nothing more mystical.",
+        [["Search", "Answers composed from patterns, not looked up."], ["Coding", "Autocomplete scaled up to whole functions."], ["Support", "Draft replies a human reviews."]],
+        ["Why does predicting the next word produce reasoning-like behaviour?", "What can't a pure next-token model know?"]),
+      ai1("token", "Tokens and tokenization", [], "Models read chunks of characters, not words, and you pay per chunk.",
+        [["Cost", "API pricing is per token."], ["Languages", "Some languages cost 3x more tokens for the same meaning."], ["Bugs", "Why models miscount letters in a word."]],
+        ["Why does 'strawberry' trip models up?", "How do you estimate tokens from words?"]),
+      ai1("context", "Context windows", ["token"], "The model only sees what fits in the window right now. It has no other memory.",
+        [["Chat apps", "Long chats get summarised or trimmed."], ["Code assistants", "Which files get loaded matters more than the prompt."], ["Legal", "Contracts that exceed the window need splitting."]],
+        ["What happens when the conversation outgrows the window?", "Why isn't a bigger window always better?"]),
+      ai1("attention", "Attention and transformers", ["llm"], "Every token weighs every other token to decide what matters.",
+        [["Translation", "Alignment between words across languages."], ["Vision", "Patches of an image treated like tokens."], ["Biology", "Proteins as sequences."]],
+        ["Explain attention with a cocktail party.", "Why did transformers beat RNNs?"]),
+      ai1("sampling", "Temperature and sampling", ["llm"], "The model outputs probabilities; sampling decides how adventurous the pick is.",
+        [["Creative writing", "Higher temperature for surprises."], ["Extraction", "Temperature zero for repeatable output."], ["Games", "Varied NPC dialogue."]],
+        ["When do you want temperature 0?", "What does top-p change that temperature doesn't?"]),
+      ai1("prompt", "Prompting that works", ["llm"], "Clear instructions, examples and constraints beat clever tricks.",
+        [["Support", "Few-shot examples set tone."], ["Data", "Structured extraction with a schema."], ["Education", "Role and level set the explanation."]],
+        ["What makes a prompt ambiguous?", "Zero-shot vs few-shot: when do examples help?"]),
+      ai1("halluc", "Hallucinations", ["llm"], "Fluent, confident, wrong. The model has no built-in sense of truth.",
+        [["Law", "Invented case citations."], ["Medicine", "Plausible but fabricated dosing."], ["News", "Made-up quotes."]],
+        ["Why does grounding reduce hallucination?", "How would you detect one automatically?"]),
+      ai2("embed", "Embeddings and vectorization", ["token"], "Turn text into coordinates where closeness means similarity in meaning.",
+        [["Search", "Find by meaning, not keywords."], ["Recommendations", "Similar tracks and articles cluster."], ["Fraud", "Unusual transactions sit far from clusters."]],
+        ["How can a computer know 'king' is near 'queen'?", "What is lost when meaning is squeezed into numbers?"]),
+      ai2("chunk", "Chunking documents", ["token", "embed"], "Split text so each piece carries one idea and can be retrieved on its own.",
+        [["Legal", "Clause-level chunks beat page-level."], ["Docs", "Respect headings so context isn't cut."], ["Code", "Chunk by function, not by line count."]],
+        ["Fixed-size vs semantic chunking: trade-offs?", "Why add overlap between chunks?"]),
+      ai2("vector", "Vector databases and indexes", ["embed"], "Fast nearest-neighbour search over millions of embeddings.",
+        [["E-commerce", "Visual product search."], ["Support", "Find similar past tickets."], ["Music", "Similar-sounding songs."]],
+        ["Why use approximate nearest neighbour search?", "What metadata filters do you need alongside vectors?"]),
+      ai2("rag", "RAG: retrieval-augmented generation", ["chunk", "vector", "halluc"], "Look up relevant text first, then let the model answer from it.",
+        [["Enterprise", "Chat over internal wiki."], ["Healthcare", "Answers grounded in guidelines."], ["Customer support", "Cite the help article used."]],
+        ["When is RAG better than fine-tuning?", "What breaks when retrieval returns the wrong chunks?"]),
+      ai2("rerank", "Hybrid search and reranking", ["rag"], "Combine keyword and semantic search, then re-score the top results.",
+        [["Legal", "Exact terms still matter."], ["Shopping", "Part numbers need keyword match."], ["Docs", "Re-rank by actual relevance."]],
+        ["Why isn't semantic search enough alone?", "What does a reranker see that embeddings don't?"]),
+      ai3("fn", "Tool use and function calling", ["prompt"], "Let the model request actions; your code runs them and returns the result.",
+        [["Assistants", "Book, search, calculate."], ["Data", "Text to SQL queries."], ["DevOps", "Run commands with approval."]],
+        ["Why shouldn't the model run tools directly?", "How do you validate arguments the model produced?"]),
+      ai3("struct", "Structured output", ["prompt"], "Force JSON that matches a schema so downstream code can rely on it.",
+        [["Finance", "Pull fields out of invoices."], ["Support", "Classify tickets."], ["Apps", "Drive UI from model output."]],
+        ["What do you do when the model returns invalid JSON?", "Why use a schema instead of 'return JSON'?"]),
+      ai3("agent", "Agents and loops", ["fn", "context"], "A model that plans, calls tools, observes results and repeats.",
+        [["Coding", "Edit, run tests, fix."], ["Research", "Search, read, synthesise."], ["Ops", "Triage alerts."]],
+        ["When is an agent overkill compared with a fixed workflow?", "How do you stop a loop that never ends?"]),
+      ai3("memory", "Memory and state for assistants", ["context", "vector"], "What to remember, where to store it and when to forget.",
+        [["Tutoring", "Remember what the learner struggled with."], ["Sales", "Account history on demand."], ["Personal", "Preferences without leaking them."]],
+        ["Short-term vs long-term memory: how would you store each?", "What should never be remembered?"]),
+      ai3("finetune", "Fine-tuning and LoRA", ["llm"], "Adjust a model with your examples when prompting isn't enough.",
+        [["Brand voice", "Consistent style."], ["Classification", "Small tuned model beats a big general one."], ["On-device", "Specialised small models."]],
+        ["Fine-tune or prompt: how do you decide?", "Why does LoRA make tuning cheaper?"]),
+      ai4("eval", "Evals: testing probabilistic software", ["prompt", "halluc"], "You can't ship what you can't measure, even when output varies.",
+        [["Support", "Score answers against a golden set."], ["Search", "Relevance judgments."], ["Safety", "Red-team test suites."]],
+        ["What belongs in a first eval set?", "What are the limits of using an LLM as judge?"]),
+      ai4("guard", "Guardrails and prompt injection", ["fn", "halluc"], "Treat model input and output as untrusted.",
+        [["Email agents", "A message that says 'forward all files'."], ["Web browsing", "Pages that talk to the model."], ["Enterprise", "Data leakage controls."]],
+        ["How would an attacker hijack your assistant?", "What should the model never be allowed to do alone?"]),
+      ai4("cost", "Latency, cost and caching", ["token", "context"], "Make it fast and cheap enough to be a product.",
+        [["Chat", "Streaming makes waiting feel shorter."], ["Batch jobs", "Discounts for non-urgent work."], ["Scale", "Cache repeated prefixes."]],
+        ["Where does the money go in your app?", "How would you route easy requests to a smaller model?"]),
+      ai4("observe", "Observability and feedback", ["eval"], "Log prompts, outputs, costs and user reactions so you can improve.",
+        [["Support", "Thumbs-down review queue."], ["Ops", "Trace slow calls."], ["Compliance", "Audit trails."]],
+        ["What would you log to debug a bad answer?", "How do you protect user privacy in logs?"]),
+    ],
+  },
+  {
+    id: "thinking", label: "Thinking tools",
+    blurb: "Mental models that pay off in every other field.",
+    concepts: [
+      c("first", "First principles", [], "Break a problem down to what's physically or logically true, then rebuild.",
+        [["Engineering", "Rocket costs fell when parts were priced by raw materials, not by industry habit."], ["Cooking", "Knowing why dough rises lets you fix any recipe."], ["Careers", "Ask what the job is for before copying how others do it."]],
+        ["Pick a thing you do 'because everyone does'. What is it actually for?", "What's the difference between a first principle and an assumption?"]),
+      c("tradeoff", "Opportunity cost", ["first"], "The real price of anything is the best thing you gave up for it.",
+        [["Money", "A free afternoon has a price: the freelance hour you skipped."], ["Cities", "Parking lots cost the housing that could stand there."], ["Studying", "Every hour on one topic is an hour off another."]],
+        ["What did your last 'free' purchase really cost?", "How do you estimate the cost of your attention?"]),
+      c("incentives", "Incentives", ["tradeoff"], "People respond to what's rewarded, not to what's announced.",
+        [["Workplaces", "Reward closed tickets and you get many tiny tickets."], ["Healthcare", "Pay per procedure vs pay per outcome."], ["Apps", "Infinite scroll exists because time-on-app was the goal."]],
+        ["Find an incentive that explains a behaviour that looks irrational.", "What did a rule you know accidentally reward?"]),
+      c("goodhart", "Goodhart's law", ["incentives"], "When a measure becomes a target, it stops measuring.",
+        [["Schools", "Teaching to the test."], ["Software", "Lines of code as productivity."], ["Social media", "Likes as proxy for value."]],
+        ["Describe a metric that was gamed.", "How would you design a metric that resists gaming?"]),
+      c("feedback", "Feedback loops", ["first"], "Outputs that feed back into inputs: reinforcing or balancing.",
+        [["Climate", "Melting ice exposes darker water that absorbs more heat."], ["Markets", "Bubbles and crashes."], ["Habits", "Small wins make the next win easier."]],
+        ["Draw a loop in your own routine.", "Why do balancing loops feel stable until a delay hits?"]),
+      c("second", "Second-order effects", ["feedback", "tradeoff"], "Ask 'and then what?' at least twice.",
+        [["Policy", "Rent control can shrink supply."], ["Product", "Fast shipping resets what customers expect."], ["Health", "Antibiotics saved millions, then bred resistance."]],
+        ["Take a recent decision. What is its third-order effect?", "Why are we bad at seeing second-order effects?"]),
+      c("baserate", "Base rates", ["first"], "Before the story about this case, ask how often it happens at all.",
+        [["Medicine", "A positive test for a rare disease is often a false alarm."], ["Startups", "Most ventures fail whatever the pitch says."], ["Sport", "Rookie 'phenoms' regress."]],
+        ["What is the base rate for something you're optimistic about?", "How do you stay open to being the exception?"]),
+      c("inversion", "Inversion", ["first"], "To get a result, work out how to guarantee its opposite, then avoid that.",
+        [["Safety", "Pre-mortems list ways a project dies."], ["Writing", "Remove everything a bored reader would skip."], ["Investing", "Avoiding big losses beats chasing big wins."]],
+        ["Invert a goal you have this month.", "Where would a pre-mortem have saved you?"]),
+      c("mapterr", "Map vs territory", ["baserate"], "Every model simplifies. Don't confuse it with reality.",
+        [["Economics", "GDP is a map of wellbeing."], ["Navigation", "Roads that exist on the map but not on the ground."], ["AI", "Benchmarks vs real use."]],
+        ["Name a model you rely on. What does it leave out?", "How do you notice when a map has stopped fitting?"]),
+      c("explore", "Explore vs exploit", ["tradeoff", "baserate"], "When to keep trying new things and when to commit to the best known one.",
+        [["Dating", "The 37% rule is a popular simplification."], ["Music apps", "Recommenders balance new and familiar."], ["Careers", "Early breadth, later depth."]],
+        ["Are you exploring or exploiting right now?", "What does a sensible exploration budget look like?"]),
+    ],
+  },
+  {
+    id: "web", label: "Web development",
+    blurb: "From a blank file to a live, secure app.",
+    concepts: [
+      c("browser", "What a browser really does", [], "It fetches text, turns it into a tree, paints pixels and runs your code.",
+        [["Performance", "Render-blocking scripts explain slow pages."], ["Security", "The same-origin rule is the browser's main defence."], ["Games", "Canvas and WebGL are drawing APIs on the same engine."]],
+        ["What happens between pressing Enter and seeing a page?", "Why do two tabs not share variables?"]),
+      c("html", "HTML as structure", ["browser"], "Describe what content is; let CSS decide how it looks.",
+        [["Accessibility", "Screen readers navigate by landmarks and headings."], ["SEO", "Crawlers rank by structure."], ["Email", "HTML email is HTML with the clock turned back to 2003."]],
+        ["Why does a real button beat a clickable div?", "What breaks if headings are only bold text?"]),
+      c("css", "CSS and layout", ["html"], "Layout is a negotiation between boxes, parents and screens.",
+        [["Print", "Margins and gutters are the same ideas."], ["Brand", "Design tokens as variables."], ["Mobile", "Responsive means designing for the unknown width."]],
+        ["When would you choose grid over flexbox?", "Why does padding sometimes overflow a 100% width?"]),
+      c("js", "JavaScript's odd bits", ["browser"], "Functions are values, objects are bags and 'this' is a trap.",
+        [["Servers", "Same language on Node and edge runtimes."], ["Automation", "Browser extensions and sheet scripts."], ["Tooling", "Build tools are JavaScript programs."]],
+        ["What does a closure actually remember?", "Why is 0.1 + 0.2 not 0.3?"]),
+      c("git", "Git: time travel for files", [], "A history of snapshots you can branch, compare and rewind.",
+        [["Writing", "Lawyers use it for drafts."], ["Infrastructure", "Servers described as code live in repos."], ["Science", "Reproducible analyses need versioned code."]],
+        ["Explain commit, branch and merge with a library analogy.", "How would you recover a deleted branch?"]),
+      c("http", "HTTP: a conversation in text", ["browser"], "Method, URL, headers, body, status code. That's the whole web.",
+        [["IoT", "Sensors post readings over HTTP."], ["Payments", "Webhooks are HTTP calls in reverse."], ["Debugging", "The Network tab is a microscope for any site."]],
+        ["401 vs 403: who's at fault?", "Why are GET requests supposed to be safe?"]),
+      c("dom", "The DOM: a page you edit while it's alive", ["html", "js"], "The document is a live tree; events let you react to people.",
+        [["Testing", "Browser tests click through the DOM like a user."], ["Extensions", "Content scripts rewrite other people's pages."], ["Analytics", "Click tracking is an event listener."]],
+        ["Why is event delegation cheaper?", "What does touching layout in a loop cost?"]),
+      c("async", "Async: waiting without freezing", ["js", "http"], "Do slow things (network, disk) while the interface keeps moving.",
+        [["Backend", "Queues and workers are async at scale."], ["Mobile", "Never block the UI thread."], ["Trading", "Order flow is an async event stream."]],
+        ["Explain the event loop to a barista.", "What happens to an unhandled rejection?"]),
+      c("api", "APIs: contracts between programs", ["http", "async"], "Resources as URLs, actions as verbs, data as JSON.",
+        [["Healthcare", "Records exchanged through standard APIs."], ["Maps", "Every pin is a tile and a query."], ["AI", "A model is consumed as one POST endpoint."]],
+        ["What makes an API pleasant?", "Offset or cursor pagination, and why?"]),
+      c("state", "State: the hard part of every UI", ["dom", "async"], "Interfaces are functions of state; bugs are state you forgot.",
+        [["Design systems", "Components encode a brand."], ["Mobile", "React Native reuses the same model."], ["Games", "A game loop is state plus time."]],
+        ["Where should this piece of state live?", "When is a framework overkill?"]),
+      c("auth", "Auth: who are you, really?", ["http", "api"], "Prove identity, then remember it safely.",
+        [["Security", "Weak auth starts most breaches."], ["Enterprise", "Single sign-on ties whole companies together."], ["Consumer", "Passkeys replace passwords."]],
+        ["Cookie vs token: trade-offs?", "Why hash passwords instead of encrypting them?"]),
+      c("ship", "Shipping: laptop to everyone", ["git", "http"], "Test automatically, deploy often, roll back fast.",
+        [["Games", "Live-ops patches weekly."], ["Banks", "Change control meets automation."], ["Startups", "Speed of learning is the edge."]],
+        ["What should block a deploy?", "Blue-green vs canary, in plain words."]),
+    ],
+  },
+  {
+    id: "data", label: "Data and machine learning",
+    blurb: "Think in data, then teach machines to learn from it.",
+    concepts: [
+      c("dist", "Distributions: the shape of typical", [], "Averages hide the shape. Look at the shape first.",
+        [["Sport", "Averages hide streaks and outliers."], ["Medicine", "Reference ranges are percentiles."], ["Web", "Latency is long-tailed, so p99 matters."]],
+        ["When does the mean mislead?", "What does standard deviation say in plain words?"]),
+      c("sampling", "Sampling and bias", ["dist"], "Who is in your data decides what you can claim.",
+        [["Polls", "Phone surveys miss people who don't answer phones."], ["Product", "Power users are not users."], ["History", "Survivorship bias: the planes that came back."]],
+        ["Spot the bias in a news headline.", "How big a sample is enough?"]),
+      c("bayes", "Conditional probability and Bayes", ["dist"], "Update beliefs in proportion to evidence, not feeling.",
+        [["Medicine", "A positive result can still mean probably healthy."], ["Spam filters", "Words shift the odds."], ["Poker", "Pot odds are conditional probability."]],
+        ["Explain the base-rate fallacy with one example.", "How should one surprising result move you?"]),
+      c("sql", "SQL: asking tables questions", [], "Filter, join, group. Most business questions are three of these.",
+        [["Business", "Every dashboard is a query behind glass."], ["Apps", "Most products sit on a relational DB."], ["Government", "Census data lives in tables."]],
+        ["Explain inner vs left join with people and pets.", "Why do indexes help reads and hurt writes?"]),
+      c("python", "Python for data", [], "A readable language with a huge data ecosystem.",
+        [["Science", "Notebooks are the new lab book."], ["Finance", "Quant desks prototype in it."], ["Ops", "Glue scripts save hours."]],
+        ["Why do analysts love notebooks, and what's the catch?", "Why is a numpy array faster than a list?"]),
+      c("viz", "Charts that don't lie", ["dist"], "Encode numbers as position and length before colour.",
+        [["Newsrooms", "Charts frame public debate."], ["Medicine", "Growth charts guide parents."], ["Climate", "Warming stripes made data feel."]],
+        ["What makes a chart honest?", "When is a pie chart acceptable?"]),
+      c("clean", "Cleaning: where the time goes", ["python", "sql"], "Real data is messy; the model is the easy part.",
+        [["Retail", "Dedupe a customer across channels."], ["Health", "Units and missing values change outcomes."], ["Language", "Tokenisation is feature work."]],
+        ["Why is most of the work 'boring'?", "What is data leakage? Give an example."]),
+      c("causal", "Correlation vs causation", ["sampling", "bayes"], "Two things moving together doesn't say why.",
+        [["Economics", "Natural experiments."], ["Tech", "A/B tests are small causal machines."], ["Health", "Observational vs randomised trials."]],
+        ["Give a funny spurious correlation and the real story.", "How would you test a cause without an experiment?"]),
+      c("regress", "Regression: a line through the world", ["clean", "dist"], "The simplest model that is still useful.",
+        [["Real estate", "Price models from rooms and location."], ["Marketing", "Spend-to-sales attribution."], ["Physics", "Calibration curves."]],
+        ["What doesn't R² tell you?", "When does a straight line stop working?"]),
+      c("overfit", "Train, test and overfitting", ["regress"], "A model that memorises the past can't predict the future.",
+        [["Finance", "Backtests that look amazing then fail."], ["Education", "Memorising answers vs understanding."], ["Medicine", "A model good in one hospital, poor in another."]],
+        ["Explain overfitting to a child.", "Why keep a test set locked away?"]),
+      c("classify", "Classification and the confusion matrix", ["overfit", "bayes"], "Four boxes decide whether a model is useful: hits, misses, false alarms, correct passes.",
+        [["Banking", "Fraud alerts: cost of a miss vs a false alarm."], ["Security", "Intrusion detection."], ["Hiring", "Fairness across groups."]],
+        ["Precision vs recall: when do you favour each?", "Why can 99% accuracy be useless?"]),
+      c("embed", "Embeddings: meaning as coordinates", ["classify"], "Turn words, images or songs into points where closeness means similarity.",
+        [["Search", "Find by meaning, not keywords."], ["Music", "Similar-sounding tracks cluster."], ["Biology", "Protein similarity."]],
+        ["How can a computer know 'king' is near 'queen'?", "What gets lost when you compress meaning into numbers?"]),
+      c("llm", "Transformers and LLMs", ["embed"], "Attention lets every token consult every other token.",
+        [["Law", "Contract review."], ["Coding", "Autocomplete to agents."], ["Education", "Personal tutors."]],
+        ["Explain attention with a cocktail party.", "Where do LLMs fail confidently?"]),
+    ],
+  },
+  {
+    id: "money", label: "Personal finance",
+    blurb: "The money skills nobody taught you.",
+    concepts: [
+      c("cashflow", "Cash flow: the number that can't lie", [], "What comes in, what goes out, and what's left.",
+        [["Households", "50/30/20 as a starting rule."], ["Freelancing", "Irregular income needs a buffer."], ["Startups", "Runway is cash flow with a deadline."]],
+        ["Which single number would you track first?", "Fixed vs variable costs: what do you cut first?"]),
+      c("compound", "Compounding", ["cashflow"], "Growth on growth. Time is the main ingredient.",
+        [["Investing", "Starting early beats starting big."], ["Debt", "Credit-card APRs compound against you."], ["Biology", "Populations grow the same way."]],
+        ["Use the rule of 72 on something.", "Why does starting at 22 vs 32 matter so much?"]),
+      c("inflation", "Inflation: the quiet tax", ["compound"], "Cash loses purchasing power every year it sits.",
+        [["Savers", "Real interest rate is nominal minus inflation."], ["Wages", "A raise below inflation is a pay cut."], ["History", "Hyperinflation episodes."]],
+        ["What's your real return on savings right now?", "Who gains from inflation?"]),
+      c("buffer", "Emergency fund", ["cashflow"], "Cash that turns a crisis into an inconvenience.",
+        [["Jobs", "A cushion lets you leave a bad one."], ["Health", "Deductibles arrive unannounced."], ["Business", "Working capital plays the same role."]],
+        ["How many months, and why?", "Where should it live?"]),
+      c("debt", "Debt mechanics and credit", ["compound"], "Borrowing as tool, trap and reputation system.",
+        [["Housing", "Mortgages are structured debt."], ["Business", "Leverage amplifies both ways."], ["Students", "Income-driven repayment."]],
+        ["Avalanche or snowball, and why?", "What does a credit score actually measure?"]),
+      c("tax", "Taxes: marginal, not total", ["cashflow"], "A higher bracket only taxes the next slice.",
+        [["Employees", "Withholding and refunds."], ["Creators", "Self-employment tax surprises."], ["Property", "Capital gains timing."]],
+        ["Can a raise ever reduce take-home pay?", "Deduction vs credit?"]),
+      c("risk", "Risk and diversification", ["compound", "buffer"], "Don't bet your future on one outcome.",
+        [["Portfolios", "Correlation matters more than count."], ["Careers", "Skills as a portfolio."], ["Insurance", "Pooling risk across many people."]],
+        ["What risk would you not diversify away?", "Why does diversification feel boring?"]),
+      c("index", "Index funds", ["risk"], "Own the market cheaply instead of picking winners.",
+        [["Retirement", "A common core."], ["Institutions", "Endowments diversify by asset class."], ["Behaviour", "Boring beats clever."]],
+        ["Why do most active funds lag the index?", "What does a 1% fee cost over 30 years?"]),
+      c("retire", "Retirement accounts", ["tax", "index"], "Tax-advantaged wrappers for long-term investing.",
+        [["Employers", "Matching is free money."], ["Gig work", "Solo plans fill the gap."], ["Abroad", "Systems differ by country."]],
+        ["Pre-tax or after-tax: how do you choose?", "What's the 4% rule and where does it fail?"]),
+      c("insure", "Insurance as risk transfer", ["buffer", "risk"], "Pay a small certain cost to avoid a large uncertain one.",
+        [["Health", "Premiums vs deductibles."], ["Cars", "Liability is the key coverage."], ["Business", "Cyber and key-person cover."]],
+        ["What should you insure vs self-insure?", "Why is adverse selection a problem?"]),
+      c("traps", "Behavioural traps", ["index"], "Our brains mishandle money in predictable ways.",
+        [["Marketing", "Anchoring, scarcity, 'free' shipping."], ["Crypto", "FOMO cycles."], ["Policy", "Auto-enrolment nudges."]],
+        ["Which bias has cost you money?", "How do you build guardrails around yourself?"]),
+    ],
+  },
+  {
+    id: "security", label: "Cybersecurity",
+    blurb: "Understand attacks so you can defend against them.",
+    concepts: [
+      c("threat", "Threat modelling", [], "Who wants what from you, and how would they get it?",
+        [["Hospitals", "Availability can be life-critical."], ["Banks", "Integrity of ledgers above all."], ["Journalists", "Confidentiality protects sources."]],
+        ["Threat-model your phone in one minute.", "Which of confidentiality, integrity and availability matters most for a voting system?"]),
+      c("net", "Networks: how machines find each other", [], "IP, DNS, TCP and ports in plain terms.",
+        [["Home", "Your router is a security boundary."], ["Cloud", "Virtual networks are software."], ["Forensics", "Packet captures tell the story."]],
+        ["What happens when DNS lies?", "Why do ports exist?"]),
+      c("hash", "Hashing and integrity", [], "A fingerprint for data: change a bit and it all changes.",
+        [["Software", "Downloads verified by checksum."], ["Passwords", "Stored as salted hashes."], ["Blockchain", "Blocks linked by hashes."]],
+        ["Hash vs encrypt: say it in two sentences.", "Why add a salt?"]),
+      c("crypto", "Encryption and keys", ["hash"], "Symmetric speed, public-key trust, and why you need both.",
+        [["Messaging", "End-to-end encryption."], ["Web", "TLS secures nearly every page."], ["Money", "Signatures prove who authorised a payment."]],
+        ["Why not invent your own cipher?", "How do two strangers agree on a secret in public?"]),
+      c("passwords", "Passwords, MFA and passkeys", ["crypto"], "Proving identity without leaking it.",
+        [["Consumers", "Password managers change the game."], ["Enterprises", "Phishing-resistant MFA."], ["Devices", "Biometrics unlock locally."]],
+        ["Why are passkeys phishing-resistant?", "Is SMS 2FA good enough?"]),
+      c("injection", "Injection and XSS", ["net", "crypto"], "Untrusted input mistaken for instructions.",
+        [["Developers", "Treat all input as hostile."], ["Bug bounties", "Real money for responsible disclosure."], ["Compliance", "OWASP maps to audits."]],
+        ["Explain SQL injection with a restaurant order slip.", "XSS vs CSRF in one line."]),
+      c("people", "Social engineering", ["threat"], "Hacking people because people are easier than systems.",
+        [["Finance", "Business email compromise."], ["Politics", "Targeted spear-phishing."], ["Everyday", "Fake delivery texts."]],
+        ["What red flags would you teach your family?", "Why does urgency work so well?"]),
+      c("leastpriv", "Least privilege", ["threat", "passwords"], "Give each person and program only what it needs, for as long as it needs.",
+        [["Cloud", "Overbroad roles cause leaks."], ["Apps", "Phone permission prompts."], ["Companies", "Offboarding checklists."]],
+        ["Where do you have more access than you need?", "How do you make least privilege convenient?"]),
+      c("patch", "Patching and vulnerability management", ["injection"], "Find, rank and fix weaknesses before attackers do.",
+        [["Healthcare", "Legacy devices that can't be patched."], ["Cloud", "Misconfigurations are vulnerabilities too."], ["Governments", "Coordinated disclosure."]],
+        ["How do you prioritise 10,000 findings?", "What is a zero-day, really?"]),
+      c("supply", "Supply-chain security", ["patch", "leastpriv"], "Your code includes everyone else's code.",
+        [["Open source", "One poisoned package reaches thousands."], ["Hardware", "Components built abroad."], ["SaaS", "Vendors as attack paths."]],
+        ["How would you vet a dependency?", "What is a software bill of materials for?"]),
+      c("ir", "Incident response", ["patch", "people"], "Detect, contain, eradicate, recover, learn.",
+        [["Ransomware", "Backups and playbooks decide outcomes."], ["PR", "Crisis communication."], ["Law", "Breach notification duties."]],
+        ["What are the first 30 minutes of a suspected breach?", "Why do blameless post-mortems work?"]),
+    ],
+  },
+  {
+    id: "product", label: "Startups and product",
+    blurb: "Find a real problem, build the smallest answer, learn fast.",
+    concepts: [
+      c("problem", "Talking to people about their problems", [], "Ask about the past, not your idea.",
+        [["Healthcare", "Shadow clinicians before building."], ["Fintech", "Interview people mid-pain."], ["Education", "Ask teachers what breaks on Monday."]],
+        ["How do you ask without pitching?", "What makes a problem worth solving?"]),
+      c("jtbd", "Jobs to be done", ["problem"], "People hire products to make progress in a situation.",
+        [["Food", "A milkshake hired for a boring commute."], ["Software", "Why users switch tools."], ["Tools", "People buy the hole, not the drill."]],
+        ["State the job for a product you use daily.", "Who is your real competitor?"]),
+      c("mvp", "The smallest test", ["jtbd"], "Test the riskiest assumption with the least build.",
+        [["Hardware", "Cardboard prototypes."], ["Services", "Do it by hand first."], ["Content", "Newsletter before platform."]],
+        ["What would you test first?", "Where's the line between minimum and bad?"]),
+      c("retention", "Retention", ["mvp"], "If people don't come back, nothing else matters.",
+        [["SaaS", "Cohort curves flatten or they don't."], ["Consumer", "Habit loops."], ["Marketplaces", "Repeat transactions."]],
+        ["What does a healthy retention curve look like?", "How do you separate curiosity from need?"]),
+      c("pricing", "Pricing", ["jtbd"], "Price captures a slice of the value created.",
+        [["Software", "Per seat, usage or flat."], ["Media", "Ads vs subscription."], ["Retail", "Anchors and tiers."]],
+        ["Cost-plus vs value-based: explain.", "How would you test a price?"]),
+      c("unit", "Unit economics", ["pricing", "retention"], "Does each customer make or lose money over their lifetime?",
+        [["Delivery apps", "Subsidised orders and thin margins."], ["SaaS", "CAC payback."], ["Retail", "Contribution margin."]],
+        ["Work out LTV and CAC for a business you know.", "When do negative unit economics make sense?"]),
+      c("pmf", "Product-market fit", ["retention", "unit"], "A market pulling the product out of your hands.",
+        [["SaaS", "Retention flattens."], ["Consumer", "Organic word of mouth."], ["Marketplaces", "Liquidity on both sides."]],
+        ["Which signals prove it?", "How do you tell polite interest from demand?"]),
+      c("distrib", "Distribution and growth loops", ["pmf"], "Every durable product has a way of being found.",
+        [["Dev tools", "Open source as marketing."], ["Consumer", "Invite loops."], ["B2B", "Sales-led vs product-led."]],
+        ["Describe a loop that feeds itself.", "Why do good products still fail at distribution?"]),
+      c("fund", "Funding and equity", ["pmf"], "Selling pieces of the future to afford the present.",
+        [["Venture", "Power-law returns shape what gets funded."], ["Bootstrapping", "Revenue as funding."], ["Employees", "Options and vesting."]],
+        ["When should a founder not raise?", "What does dilution mean?"]),
+    ],
+  },
+];
+
+/* Speak drills */
+window.DEBATES = {
+  "Tech": ["AI tools make people worse at thinking", "Social media does more harm than good for teenagers", "Open-source AI models should be unrestricted", "Self-driving cars should be allowed before they're perfect", "Everyone should learn to code", "Privacy matters more than convenience"],
+  "Work": ["Remote work beats the office", "A four-day week should be the default", "A portfolio matters more than a degree", "Hustle culture does more harm than good", "Performance reviews should be abolished", "Salaries should be public"],
+  "Society": ["Cities should ban cars from their centres", "Voting should be compulsory", "Tipping culture should end", "Zoos do more good than harm", "Space exploration is worth the cost", "Standardised tests should be scrapped"],
+  "Life": ["Breakfast is overrated", "Physical books beat e-books", "Travelling solo beats travelling with friends", "Renting beats buying a home", "Money buys happiness, up to a point", "Learning an instrument as an adult is worth it"],
+};
+window.DEBATE_ARC = ["Claim", "Evidence", "Rebut yourself"];
+
+window.INTERVIEWS = {
+  "Behavioural": ["Tell me about a time you disagreed with your manager.", "Describe a project that failed and what you learned.", "Tell me about a time you had to learn something fast.", "Describe a time you led without authority.", "Tell me about a result you're proud of.", "Describe a conflict with a teammate and how you resolved it.", "Tell me about a deadline you nearly missed."],
+  "Tech and product": ["Explain how the internet works to a non-technical person.", "How would you improve a product you use every day?", "Walk me through how you'd debug a slow page.", "How would you decide what not to build?", "How would you handle a sudden tenfold traffic spike?", "Which technology do you think is overrated, and why?", "How would you measure the success of a new feature?"],
+  "Curveball": ["Tell me about yourself in one minute.", "What would you do in your first 90 days?", "Why should we hire you over someone with more experience?", "What's your biggest weakness, honestly?", "Where do you want to be in five years, and why?", "What question should I have asked you?"],
+};
+window.STAR_ARC = ["Situation", "Task", "Action", "Result"];
+window.ANSWER_ARC = ["Answer", "Why", "Example"];
+
+window.AUDIENCES = ["a ten-year-old", "a sceptical CEO", "your grandmother", "an investor with two minutes", "a new teammate on day one", "a journalist who will quote you", "a friend who finds it boring", "a room of first-year students", "someone who has heard it all before"];
+window.EXPLAIN_ARC = ["Plain words", "An example", "Why it matters"];
+
+window.ARTICLE_ARC = ["What it says", "Your take", "What next"];
+window.ARTICLE_TOPICS = ["Past 24 hours", "Tech", "World", "Business", "Science"];
+window.ARTICLE_FALLBACK = ["A city announces it will ban cars from its centre next year", "A major company lets every employee work from anywhere", "A school replaces homework with project work", "A country passes a law on AI-generated content", "A popular app starts charging a monthly fee"];
+
+/* Deep research: topics that reward a few minutes of reading first */
+window.RESEARCH_TOPICS = {
+  "Personal finance": ["Why the 4% retirement rule is debated", "How index funds changed investing", "The psychology of subscriptions", "What inflation does to savings", "How credit scores are calculated"],
+  "Tech and AI": ["How large language models are trained", "What a transistor really does", "The history of the internet's protocols", "Why chips are hard to make", "How recommendation algorithms steer attention"],
+  "Fitness": ["Progressive overload explained", "Why sleep drives recovery", "Zone 2 training", "The science of stretching", "How habits form around exercise"],
+  "Nutrition": ["What fibre does in the gut", "Ultra-processed food debates", "Protein timing myths", "How the glycaemic index works", "Why hydration advice is messy"],
+  "Productivity": ["The Pomodoro technique evidence", "Deep work vs open-plan offices", "Why to-do lists fail", "Spaced repetition", "The planning fallacy"],
+  "History": ["The Silk Road's real impact", "How the printing press spread ideas", "The Green Revolution", "Causes of the 2008 financial crisis", "The fall of the Roman Republic"],
+  "Literature": ["Why unreliable narrators work", "The hero's journey and its critics", "How translation shapes a novel", "Magical realism's roots", "The rise of the novel"],
+  "Startups": ["Why most startups fail", "How Y Combinator changed seed funding", "Network effects explained", "The story of a famous pivot", "Unit economics of a marketplace"],
+  "Entrepreneurship": ["Bootstrapping versus venture capital", "How to validate before building", "Franchising economics", "Lessons from failed brands", "The creator economy's business models"],
+};
+</script>
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const PFX = "spinpath:";
+  const MODES = [
+    { id: "roadmap", label: "Learn", blurb: "Pick a goal. Every spin is a random concept toward it. We keep track of what you've covered." },
+    { id: "speak", label: "Speak", blurb: "Pick a drill and talk. No prep, a clear structure, a running clock." },
+    { id: "research", label: "Deep research", blurb: "Spin a topic, research it, then speak when you're ready." },
+  ];
+
+  /* ---------- storage ---------- */
+  const store = {
+    get(k, d) { try { const v = localStorage.getItem(PFX + k); return v === null ? d : JSON.parse(v); } catch { return d; } },
+    set(k, v) { try { localStorage.setItem(PFX + k, JSON.stringify(v)); } catch {} },
+  };
+  const S = {
+    mode: store.get("mode", "roadmap") === "cuff" ? "speak" : store.get("mode", "roadmap"),
+    drill: store.get("drill", "debate"),
+    scope: store.get("scope", {}),
+    learned: store.get("learned", {}),
+    speech: store.get("speech", 2),
+    research: store.get("research", 5),
+    sound: store.get("sound", false),
+    days: store.get("days", []),
+    last: null,
+    current: null,
+  };
+  const save = (k) => store.set(k, S[k]);
+
+  /* ---------- helpers ---------- */
+  const rand = (a) => a[Math.floor(Math.random() * a.length)];
+  const mmss = (s) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
+  const el = (tag, props = {}, ...kids) => {
+    const n = Object.assign(document.createElement(tag), props);
+    kids.flat().forEach((k) => n.append(k));
+    return n;
+  };
+  /* Custom dropdown over a hidden native <select>, so menu colours are fully ours
+     (native popups ignore page colours in some browsers). */
+  const ddSync = [];
+  function makeSelect(sel) {
+    const label = document.querySelector(`label[for="${sel.id}"]`);
+    const wrap = el("div", { className: "dd" });
+    const btn = el("button", { type: "button", className: "dd-btn" });
+    const list = el("ul", { className: "dd-list", role: "listbox", tabIndex: -1 });
+    btn.setAttribute("aria-haspopup", "listbox"); btn.setAttribute("aria-expanded", "false");
+    if (label) btn.setAttribute("aria-label", label.textContent);
+    list.hidden = true;
+    sel.classList.add("dd-src");
+    wrap.append(btn, list);
+    sel.after(wrap);
+    const sync = () => {
+      const o = sel.options[sel.selectedIndex];
+      btn.textContent = o ? o.textContent : "";
+      wrap.hidden = sel.hidden;
+    };
+    const close = (focus) => { list.hidden = true; btn.setAttribute("aria-expanded", "false"); if (focus) btn.focus(); };
+    const items = () => [...list.children];
+    const mark = (i) => { items().forEach((li, k) => li.classList.toggle("act", k === i)); const li = items()[i]; if (li) li.scrollIntoView({ block: "nearest" }); };
+    const choose = (value) => { close(true); if (sel.value !== value) { sel.value = value; sel.dispatchEvent(new Event("change")); } sync(); };
+    const open = () => {
+      document.querySelectorAll(".dd-list").forEach((l) => { l.hidden = true; });
+      list.replaceChildren(...[...sel.options].map((o) => {
+        const li = el("li", { textContent: o.textContent });
+        li.setAttribute("role", "option"); li.setAttribute("aria-selected", String(o.value === sel.value)); li.dataset.value = o.value;
+        li.onclick = () => choose(o.value);
+        return li;
+      }));
+      list.hidden = false; btn.setAttribute("aria-expanded", "true");
+      list.focus(); mark(sel.selectedIndex);
+    };
+    btn.onclick = () => (list.hidden ? open() : close(true));
+    btn.onkeydown = (e) => { if (e.key === "ArrowDown" || e.key === "ArrowUp") { e.preventDefault(); open(); } };
+    list.onkeydown = (e) => {
+      const n = items().length; let i = items().findIndex((li) => li.classList.contains("act"));
+      if (e.key === "ArrowDown") { e.preventDefault(); mark(Math.min(n - 1, i + 1)); }
+      else if (e.key === "ArrowUp") { e.preventDefault(); mark(Math.max(0, i - 1)); }
+      else if (e.key === "Home") { e.preventDefault(); mark(0); }
+      else if (e.key === "End") { e.preventDefault(); mark(n - 1); }
+      else if (e.key === "Enter" || e.key === " ") { e.preventDefault(); if (i >= 0) choose(items()[i].dataset.value); }
+      else if (e.key === "Escape" || e.key === "Tab") { e.stopPropagation(); close(e.key === "Escape"); }
+    };
+    document.addEventListener("click", (e) => { if (!wrap.contains(e.target)) close(false); });
+    ddSync.push(sync); sync();
+  }
+  const roadmap = () => ROADMAPS.find((r) => r.id === S.scope.roadmap) || ROADMAPS[0];
+  const byId = (r, id) => r.concepts.find((c) => c.id === id);
+  const learnedSet = (r) => new Set(S.learned[r.id] || []);
+  const unlocks = (r, id) => r.concepts.filter((c) => c.prereqs.includes(id));
+
+  /* ---------- connected spin ---------- */
+  const remaining = (r) => { const done = learnedSet(r); return r.concepts.filter((c) => !done.has(c.id)); };
+  const neighbours = (r, c) => new Set([...c.prereqs, ...unlocks(r, c.id).map((x) => x.id)]);
+  function pickConcept(r) {
+    const left = remaining(r);
+    if (!left.length) return null;
+    const last = S.last && S.last.roadmap === r.id ? byId(r, S.last.id) : null;
+    const done = r.concepts.filter((c) => learnedSet(r).has(c.id));
+    const near = new Set(last ? neighbours(r, last) : []);
+    const knownNear = new Set(done.flatMap((c) => [...neighbours(r, c)]));
+    const pool = left.filter((c) => !last || c.id !== last.id);
+    // Any unlearned concept can come up. Ideas connected to the last one, or to things
+    // you already know, are a bit more likely so each spin tends to build on the last.
+    const w = (c) => 1 + (near.has(c.id) ? 2 : 0) + (knownNear.has(c.id) ? 1 : 0);
+    const bag = (pool.length ? pool : left).flatMap((c) => Array(w(c)).fill(c));
+    return rand(bag);
+  }
+  const DRILLS = [
+    { id: "debate", label: "Debate motion", src: () => DEBATES },
+    { id: "news", label: "Fresh read" },
+    { id: "interview", label: "Interview seat", src: () => INTERVIEWS },
+    { id: "explain", label: "Explain it to…" },
+  ];
+  const isReading = () => S.mode === "speak" && S.drill === "news";
+  const scopeKey = () => (S.mode === "speak" ? "speak:" + S.drill : S.mode);
+  const catPool = (src, key) => (key === "any" || !src[key] ? Object.keys(src) : [key]).flatMap((cat) => src[cat].map((text) => ({ cat, text })));
+  const otherPool = () => catPool(RESEARCH_TOPICS, S.scope.research || "any");
+
+  /* articles: articles.json is refreshed daily by a GitHub Action (rolling 7 days).
+     If it's missing, we fall back to a live Hacker News query for the past week. */
+  const DAY = 864e5;
+  async function getJson(url) {
+    const ctl = new AbortController(), t = setTimeout(() => ctl.abort(), 6000);
+    try { const r = await fetch(url, { signal: ctl.signal }); if (!r.ok) throw 0; return await r.json(); } finally { clearTimeout(t); }
+  }
+  const httpUrl = (u) => { try { return /^https?:$/.test(new URL(u).protocol) ? u : null; } catch { return null; } };
+  let articleCache = null;
+  async function loadArticles() {
+    if (articleCache) return articleCache;
+    let items = [];
+    try { items = (await getJson(`articles.json?h=${Math.floor(Date.now() / 36e5)}`)).items || []; } catch {}
+    if (!items.length) {
+      try {
+        const since = Math.floor((Date.now() - 7 * DAY) / 1000);
+        const j = await getJson(`https://hn.algolia.com/api/v1/search?tags=story&numericFilters=created_at_i>${since},points>120&hitsPerPage=50`);
+        items = j.hits.filter((h) => h.url).map((h) => ({ title: h.title, url: h.url, source: "Hacker News", topic: "Tech", published: h.created_at_i * 1000 }));
+      } catch {}
+    }
+    return (articleCache = items.filter((a) => a.title && httpUrl(a.url)));
+  }
+  const ago = (t) => { const d = Math.floor((Date.now() - t) / DAY); return d < 1 ? "today" : d === 1 ? "yesterday" : `${d} days ago`; };
+  async function articlePrompt() {
+    const key = S.scope["speak:news"] || "any", now = Date.now();
+    const week = (await loadArticles()).filter((a) => now - a.published <= 7 * DAY);
+    let pool = key === "any" ? week : key === "Past 24 hours" ? week.filter((a) => now - a.published <= DAY) : week.filter((a) => a.topic === key);
+    pool = pool.filter((a) => !S.last || S.last.url !== a.url);
+    if (!pool.length) pool = week; // a narrow filter came up empty: widen to the whole week
+    if (!pool.length) return { text: rand(ARTICLE_FALLBACK), kicker: "Fresh read · offline prompt", tag: "No articles loaded", hook: "Couldn't load articles, so here's a prompt instead.", arc: ARTICLE_ARC, key: {} };
+    const a = rand(pool);
+    return { text: a.title, kicker: `Fresh read · ${a.source} · ${ago(a.published)}`, tag: a.source, hook: "Skim the article, then give your take.", link: a.url, arc: ARTICLE_ARC, key: { url: a.url } };
+  }
+  async function speakPrompt() {
+    if (S.drill === "debate") {
+      const o = rand(catPool(DEBATES, S.scope["speak:debate"] || "any")), side = Math.random() < 0.5 ? "FOR" : "AGAINST";
+      return { text: o.text, kicker: `Debate · ${o.cat}`, tag: `You argue ${side}`, hook: `You argue ${side}. Use your last 30 seconds to rebut yourself.`, arc: DEBATE_ARC, key: { text: o.text } };
+    }
+    if (S.drill === "interview") {
+      const o = rand(catPool(INTERVIEWS, S.scope["speak:interview"] || "any"));
+      return { text: o.text, kicker: `Interview · ${o.cat}`, tag: o.cat, hook: o.cat === "Behavioural" ? "Answer with a real story: situation, task, action, result." : "Lead with the answer, then why, then an example.", arc: o.cat === "Behavioural" ? STAR_ARC : ANSWER_ARC, key: { text: o.text } };
+    }
+    if (S.drill === "news") return articlePrompt();
+    const r = roadmap(), done = learnedSet(r);
+    const learnedList = r.concepts.filter((c) => done.has(c.id)), c = rand(learnedList.length ? learnedList : r.concepts), aud = rand(AUDIENCES);
+    return { text: c.title, kicker: `Explain it to ${aud}`, tag: aud, hook: c.hook, concept: c, arc: EXPLAIN_ARC, key: { roadmap: r.id, id: c.id } };
+  }
+
+  /* ---------- rendering ---------- */
+  function renderModes() {
+    const box = $("modes");
+    box.replaceChildren(...MODES.map((m) => {
+      const b = el("button", { type: "button", className: "tab", textContent: m.label });
+      b.setAttribute("role", "radio");
+      b.setAttribute("aria-checked", String(m.id === S.mode));
+      b.onclick = () => { S.mode = m.id; save("mode"); S.current = null; S.last = null; renderAll(); };
+      return b;
+    }));
+    $("blurb").textContent = MODES.find((m) => m.id === S.mode).blurb;
+  }
+  function renderScope() {
+    const sel = $("scope"), dr = $("drill");
+    sel.replaceChildren();
+    dr.hidden = S.mode !== "speak";
+    if (!dr.hidden) {
+      dr.replaceChildren(...DRILLS.map((d) => el("option", { value: d.id, textContent: d.label })));
+      dr.value = S.drill;
+    }
+    const goals = S.mode === "roadmap" || (S.mode === "speak" && S.drill === "explain");
+    if (goals) {
+      ROADMAPS.forEach((r) => sel.append(el("option", { value: r.id, textContent: r.label })));
+      sel.value = roadmap().id;
+    } else {
+      const src = S.mode === "research" ? RESEARCH_TOPICS
+        : S.drill === "debate" ? DEBATES : S.drill === "interview" ? INTERVIEWS : Object.fromEntries(ARTICLE_TOPICS.map((t) => [t, 1]));
+      const news = S.mode === "speak" && S.drill === "news";
+      sel.append(el("option", { value: "any", textContent: news ? "Past 7 days" : "Any category" }));
+      Object.keys(src).forEach((k) => sel.append(el("option", { value: k, textContent: k })));
+      sel.value = S.scope[scopeKey()] || "any";
+    }
+    ddSync.forEach((f) => f());
+    $("progress").hidden = S.mode !== "roadmap";
+    if (S.mode === "roadmap") {
+      const r = roadmap(), n = learnedSet(r).size;
+      $("bar").style.width = `${(n / r.concepts.length) * 100}%`;
+      $("progressText").textContent = `${n} / ${r.concepts.length} learned`;
+    }
+  }
+  const section = (label, body) => el("div", { className: "row3" }, el("h4", { textContent: label }), body);
+  function renderCard() {
+    const card = $("card"), cur = S.current;
+    $("learned").hidden = !(cur && cur.concept);
+    if (!cur || !cur.concept) { card.hidden = true; return; }
+    const r = roadmap(), c = cur.concept, done = learnedSet(r);
+    const chip = (id) => {
+      const t = byId(r, id);
+      return el("button", { type: "button", className: "chip" + (done.has(id) ? " done" : ""), textContent: (done.has(id) ? "✓ " : "") + t.title, onclick: () => showConcept(t) });
+    };
+    const q = encodeURIComponent(`${c.title} explained`);
+    const nxt = unlocks(r, c.id);
+    card.replaceChildren(
+      section("Where it shows up", el("ul", {}, c.uses.map(([d, t]) => el("li", {}, el("b", { textContent: d + ". " }), el("span", { textContent: t }))))),
+      section("Think about", el("ul", { className: "qs" }, c.asks.map((a) => el("li", { textContent: a })))),
+      c.prereqs.length ? section("Helps to know", el("div", { className: "chips" }, c.prereqs.map(chip))) : "",
+      nxt.length ? section("Leads to", el("div", { className: "chips" }, nxt.map((n) => chip(n.id)))) : "",
+      section("Go deeper", el("p", { className: "links" },
+        el("a", { href: `https://www.youtube.com/results?search_query=${q}`, target: "_blank", rel: "noopener", textContent: "Videos" }),
+        el("a", { href: `https://en.wikipedia.org/w/index.php?search=${encodeURIComponent(c.title)}`, target: "_blank", rel: "noopener", textContent: "Wikipedia" }),
+        el("a", { href: `https://www.google.com/search?q=${q}`, target: "_blank", rel: "noopener", textContent: "Search" }))),
+    );
+    card.hidden = false;
+    $("learned").textContent = done.has(c.id) ? "Mark not learned" : "I've learned this";
+  }
+  function renderMap() {
+    const sec = $("mapSection");
+    sec.hidden = S.mode !== "roadmap";
+    if (sec.hidden) return;
+    const r = roadmap(), done = learnedSet(r);
+    $("mapTitle").textContent = `${r.label}: ${done.size} of ${r.concepts.length} learned`;
+    const rows = [];
+    let area = null;
+    r.concepts.forEach((c) => {
+      if (c.area && c.area !== area) { area = c.area; rows.push(el("li", { className: "area", textContent: area })); }
+      const isDone = done.has(c.id);
+      const box = el("input", { type: "checkbox", checked: isDone, title: isDone ? "Mark not learned" : "I already know this" });
+      box.setAttribute("aria-label", `${c.title}: learned`);
+      box.onchange = () => toggleLearned(r, c.id);
+      rows.push(el("li", { className: `node ${isDone ? "done" : ""}` },
+        box,
+        el("button", { type: "button", className: "t", textContent: c.title, onclick: () => showConcept(c) }),
+        el("span", { className: "s", textContent: isDone ? "learned" : "to learn" })));
+    });
+    $("mapList").replaceChildren(...rows);
+  }
+  function toggleLearned(r, id) {
+    const set = learnedSet(r);
+    set.has(id) ? set.delete(id) : set.add(id);
+    S.learned[r.id] = [...set]; save("learned");
+    renderScope(); renderCard(); renderMap();
+  }
+  function renderStreak() {
+    const days = new Set(S.days), d = new Date();
+    const key = (x) => x.toISOString().slice(0, 10);
+    let n = 0;
+    if (!days.has(key(d))) d.setDate(d.getDate() - 1);
+    while (days.has(key(d))) { n++; d.setDate(d.getDate() - 1); }
+    $("streak").textContent = n ? `${n}-day streak` : "";
+  }
+  function updateSlot() {
+    const cur = S.current;
+    $("kicker").textContent = cur ? cur.kicker : "Ready";
+    $("topic").textContent = cur ? cur.text : "Spin to begin.";
+    $("hook").textContent = cur ? (cur.hook || (cur.concept ? cur.concept.hook : "")) : "";
+    const link = $("readLink");
+    link.hidden = !(cur && cur.link);
+    if (!link.hidden) link.href = cur.link;
+    $("start").disabled = !cur || !!cur.empty;
+    $("start").textContent = S.mode === "roadmap" ? "Start study timer" : S.mode === "research" || isReading() ? "Start reading timer" : `Start ${S.speech} min timer`;
+  }
+  function renderAll() { renderModes(); renderScope(); renderCard(); renderMap(); renderStreak(); updateSlot(); }
+  function showConcept(c) {
+    const r = roadmap();
+    S.current = { text: c.title, kicker: r.label, concept: c };
+    S.last = { roadmap: r.id, id: c.id };
+    renderCard(); updateSlot();
+    $("topic").scrollIntoView({ block: "start", behavior: "smooth" });
+  }
+
+  /* ---------- audio: quiet, optional, no beeps ---------- */
+  let ac;
+  function ctx() { ac = ac || new (window.AudioContext || window.webkitAudioContext)(); if (ac.state === "suspended") ac.resume(); return ac; }
+  function tick() { // a soft wooden click
+    if (!S.sound) return;
+    try {
+      const a = ctx(), len = 0.03, buf = a.createBuffer(1, a.sampleRate * len, a.sampleRate), d = buf.getChannelData(0);
+      for (let i = 0; i < d.length; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / d.length, 4);
+      const src = a.createBufferSource(), f = a.createBiquadFilter(), g = a.createGain();
+      src.buffer = buf; f.type = "bandpass"; f.frequency.value = 900; f.Q.value = 2; g.gain.value = 0.18;
+      src.connect(f); f.connect(g); g.connect(a.destination); src.start();
+    } catch {}
+  }
+  function chime(freqs = [392]) { // soft sine with slow decay
+    if (!S.sound) return;
+    try {
+      const a = ctx();
+      freqs.forEach((fr, i) => {
+        const o = a.createOscillator(), g = a.createGain(), t = a.currentTime + i * 0.16;
+        o.type = "sine"; o.frequency.value = fr;
+        g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(0.06, t + 0.03); g.gain.exponentialRampToValueAtTime(0.0001, t + 1.1);
+        o.connect(g); g.connect(a.destination); o.start(t); o.stop(t + 1.2);
+      });
+    } catch {}
+  }
+
+  /* ---------- spin ---------- */
+  let spinning = false;
+  function spin() {
+    if (spinning) return;
+    let result, reel;
+    if (S.mode === "speak") {
+      const pending = speakPrompt();
+      const cat = S.drill === "debate" ? catPool(DEBATES, S.scope["speak:debate"] || "any")
+        : S.drill === "interview" ? catPool(INTERVIEWS, S.scope["speak:interview"] || "any")
+        : S.drill === "explain" ? roadmap().concepts.map((x) => ({ text: x.title })) : null;
+      reel = cat ? cat.map((x) => x.text) : ["Finding an article…"];
+      result = pending; // resolved when the reel stops
+    } else if (S.mode === "roadmap") {
+      const r = roadmap(), c = pickConcept(r);
+      if (!c) { S.current = { text: "You've covered it all.", kicker: r.label, empty: true }; renderCard(); updateSlot(); return; }
+      result = { text: c.title, kicker: r.label, concept: c, key: { roadmap: r.id, id: c.id } };
+      reel = remaining(r).map((x) => x.title); // only things you haven't learned yet
+    } else {
+      const pool = otherPool(), o = rand(pool);
+      result = { text: o.text, kicker: o.cat, key: { text: o.text } };
+      reel = pool.map((x) => x.text);
+    }
+    spinning = true;
+    const stage = $("topic").closest(".stage");
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const steps = reduce ? 0 : reel.length === 1 ? 3 : Math.min(14, 6 + reel.length);
+    $("card").hidden = true; $("hook").textContent = "";
+    stage.classList.add("spinning");
+    let i = 0, prev = "";
+    const step = async () => {
+      if (i++ < steps) {
+        let t; do { t = rand(reel); } while (reel.length > 1 && t === prev); prev = t;
+        $("topic").textContent = t; $("kicker").textContent = "Spinning";
+        // restart the drop animation
+        $("topic").style.animation = "none"; void $("topic").offsetWidth; $("topic").style.animation = "";
+        tick();
+        setTimeout(step, 55 + i * i * 1.6);
+        return;
+      }
+      result = await result;
+      stage.classList.remove("spinning");
+      S.current = result; S.last = result.key; spinning = false;
+      renderCard(); updateSlot(); chime([392]);
+    };
+    step();
+  }
+
+  /* ---------- timer ---------- */
+  let T = null;
+  const hasPrep = () => S.mode !== "speak" || isReading();
+  function openTimer() {
+    if (!S.current || S.current.empty) return;
+    $("overlay").hidden = false;
+    $("oTopic").textContent = S.current.text;
+    begin(hasPrep() ? "prep" : "speech");
+    $("oMain").focus();
+  }
+  function begin(phase) {
+    clearInterval(T && T.id);
+    const total = (phase === "prep" ? S.research : S.speech) * 60;
+    T = { phase, total, left: total, id: setInterval(tickT, 1000) };
+    paint();
+  }
+  function tickT() {
+    if (T.left > 0) T.left--;
+    if (T.left <= 0) {
+      clearInterval(T.id);
+      if (T.phase === "prep") T.phase = "ready"; else { T.phase = "done"; logDay(); }
+      chime([392, 523]);
+    }
+    paint();
+  }
+  function paint() {
+    const { phase, total, left } = T;
+    const rm = S.mode === "roadmap";
+    $("overlay").classList.toggle("done", phase === "done");
+    $("digits").textContent = mmss(phase === "ready" ? S.speech * 60 : left);
+    $("line").style.width = `${phase === "ready" ? 0 : ((total - left) / total) * 100}%`;
+    $("oPhase").textContent = phase === "prep" ? (rm ? "Study" : isReading() ? "Read" : "Research") : phase === "ready" ? "Up next" : phase === "speech" ? "Speak" + (S.current.tag ? " · " + S.current.tag : "") : "Finished";
+    $("oStatus").textContent = phase === "prep" ? (rm ? "Read, watch, take notes." : isReading() ? "Skim the article for the key claim." : "Read up on it.")
+      : phase === "ready" ? `${S.speech} min to explain it.` : phase === "speech" ? (rm ? "Explain it as if to a friend." : "Go.") : "Time.";
+    const arc = rm ? ["Define it", "Show it", "Use it"] : S.mode === "speak" ? S.current.arc : null;
+    const showArc = arc && (phase === "speech" || phase === "done");
+    $("arc").replaceChildren(...(showArc ? arc.map((a, i) =>
+      el("li", { className: phase === "done" || (total - left) / total >= i / arc.length ? "hit" : "", textContent: a })) : []));
+    const main = $("oMain");
+    main.textContent = phase === "prep" ? "Ready to speak" : phase === "ready" ? "Start speaking" : phase === "speech" ? "Finish early" : "Close";
+    main.onclick = () => {
+      if (phase === "prep" || phase === "ready") begin("speech");
+      else if (phase === "speech") { clearInterval(T.id); T.phase = "done"; logDay(); paint(); }
+      else closeTimer();
+    };
+  }
+  function closeTimer() { clearInterval(T && T.id); $("overlay").hidden = true; T = null; $("start").focus(); }
+  function logDay() {
+    const d = new Date().toISOString().slice(0, 10);
+    if (!S.days.includes(d)) { S.days.push(d); S.days = S.days.slice(-400); save("days"); renderStreak(); }
+  }
+
+  /* ---------- wiring ---------- */
+  $("spin").onclick = spin;
+  $("start").onclick = openTimer;
+  $("oClose").onclick = closeTimer;
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !$("overlay").hidden) closeTimer();
+    if (e.key === " " && e.target === document.body && $("overlay").hidden) { e.preventDefault(); spin(); }
+  });
+  $("scope").onchange = (e) => {
+    const goals = S.mode === "roadmap" || (S.mode === "speak" && S.drill === "explain");
+    S.scope[goals ? "roadmap" : scopeKey()] = e.target.value;
+    save("scope"); S.current = null; S.last = null; renderAll();
+  };
+  $("drill").onchange = (e) => { S.drill = e.target.value; save("drill"); S.current = null; S.last = null; renderAll(); };
+  $("learned").onclick = () => {
+    if (!S.current || !S.current.concept) return;
+    toggleLearned(roadmap(), S.current.concept.id);
+  };
+  $("settingsBtn").onclick = () => $("settings").showModal();
+  const sync = () => {
+    $("speechMin").value = S.speech; $("researchMin").value = S.research;
+    $("speechOut").textContent = S.speech; $("researchOut").textContent = S.research; $("sound").checked = S.sound;
+  };
+  $("speechMin").oninput = (e) => { S.speech = +e.target.value; save("speech"); sync(); updateSlot(); };
+  $("researchMin").oninput = (e) => { S.research = +e.target.value; save("research"); sync(); };
+  $("sound").onchange = (e) => { S.sound = e.target.checked; save("sound"); if (S.sound) chime([392]); };
+  $("exportBtn").onclick = () => {
+    const blob = new Blob([JSON.stringify({ learned: S.learned, days: S.days }, null, 2)], { type: "application/json" });
+    const a = el("a", { href: URL.createObjectURL(blob), download: "spinpath-progress.json" });
+    a.click(); URL.revokeObjectURL(a.href);
+  };
+  $("importBtn").onclick = () => $("importFile").click();
+  $("importFile").onchange = async (e) => {
+    try {
+      const j = JSON.parse(await e.target.files[0].text());
+      if (j.learned && typeof j.learned === "object") { S.learned = j.learned; save("learned"); }
+      if (Array.isArray(j.days)) { S.days = j.days; save("days"); }
+      renderAll();
+    } catch { alert("That file isn't valid Spinpath progress."); }
+    e.target.value = "";
+  };
+  $("resetBtn").onclick = () => {
+    if (confirm(`Reset progress for ${roadmap().label}?`)) { S.learned[roadmap().id] = []; save("learned"); S.current = null; renderAll(); }
+  };
+
+  sync();
+  makeSelect($("drill"));
+  makeSelect($("scope"));
+  renderAll();
+})();
+</script>
+</body>
+</html>

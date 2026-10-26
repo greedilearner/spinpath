@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Spin a topic that connects to what you already know, learn it in context, then explain it out loud.">
+<title>Spinpath</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page" id="app">
+  <header class="top">
+    <h1 class="mark">Spinpath</h1>
+    <button class="link" id="settingsBtn" type="button" aria-haspopup="dialog">Settings</button>
+  </header>
+
+  <nav class="tabs" role="radiogroup" aria-label="Mode" id="modes"></nav>
+  <p class="blurb" id="blurb"></p>
+
+  <div class="scope-row">
+    <label class="sr" for="scope">Scope</label>
+    <label class="sr" for="drill">Drill</label>
+    <select id="drill" hidden></select>
+    <select id="scope"></select>
+    <p class="progress" id="progress" hidden><span id="progressText"></span><i class="meter"><b id="bar"></b></i></p>
+  </div>
+
+  <main class="stage" aria-live="polite">
+    <p class="kicker" id="kicker">Ready</p>
+    <h2 class="topic" id="topic">Spin to begin.</h2>
+    <p class="hook" id="hook"></p>
+    <a class="read" id="readLink" target="_blank" rel="noopener noreferrer" hidden>Open the article</a>
+  </main>
+
+  <div class="actions">
+    <button class="btn solid" id="spin" type="button">Spin</button>
+    <button class="btn" id="start" type="button" disabled>Start timer</button>
+    <button class="btn quiet" id="learned" type="button" hidden>Mark learned</button>
+  </div>
+
+  <article class="card" id="card" hidden></article>
+
+  <section class="map" id="mapSection" hidden>
+    <div class="map-head">
+      <h3 id="mapTitle">Roadmap</h3>
+      <div class="map-tools">
+        <button class="link" id="exportBtn" type="button">Export</button>
+        <button class="link" id="importBtn" type="button">Import</button>
+        <button class="link" id="resetBtn" type="button">Reset</button>
+        <input type="file" id="importFile" accept="application/json" hidden>
+      </div>
+    </div>
+    <ol class="map-list" id="mapList"></ol>
+  </section>
+
+  <footer class="foot"><span id="streak"></span></footer>
+</div>
+
+<dialog id="settings">
+  <form method="dialog">
+    <h2>Settings</h2>
+    <label>Speech <output id="speechOut"></output> min
+      <input type="range" id="speechMin" min="1" max="10" step="1"></label>
+    <label>Study / research <output id="researchOut"></output> min
+      <input type="range" id="researchMin" min="1" max="60" step="1"></label>
+    <label class="row"><input type="checkbox" id="sound"> Sound</label>
+    <button class="btn solid">Done</button>
+  </form>
+</dialog>
+
+<div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-label="Timer" hidden>
+  <div class="overlay-inner">
+    <p class="o-phase" id="oPhase"></p>
+    <p class="o-topic" id="oTopic"></p>
+    <ol class="arc" id="arc" aria-label="Speech arc"></ol>
+    <p class="digits" id="digits" role="timer">0:00</p>
+    <i class="line"><b id="line"></b></i>
+    <p class="o-status" id="oStatus" aria-live="polite"></p>
+    <div class="actions">
+      <button class="btn solid" id="oMain" type="button"></button>
+      <button class="btn quiet" id="oClose" type="button">Close</button>
+    </div>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
