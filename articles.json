@@ -1,26 +1,313 @@
 {
- "updated": "2026-10-26T12:59:43.179Z",
+ "updated": "2026-10-27T10:31:04.645Z",
  "items": [
   {
-   "title": "Nurse killed in Ebola attack in DR Congo",
-   "url": "https://www.bbc.co.uk/news/articles/crx2dyd24188o?at_medium=RSS&at_campaign=rss",
+   "title": "More high winds hit parts of UK as Storm Boelo clean-up continues",
+   "url": "https://www.bbc.co.uk/news/articles/cqm264jxxnxzo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Science",
+   "published": 1793097040000
+  },
+  {
+   "title": "Mbappé dropped by major Chinese brands drop as backlash grows over Mao joke",
+   "url": "https://www.bbc.co.uk/news/articles/cv62yg0erp8zo?at_medium=RSS&at_campaign=rss",
    "source": "BBC",
    "topic": "World",
-   "published": 1793019478000
+   "published": 1793096353000
+  },
+  {
+   "title": "What does Israel's election mean for Gaza and the wider world?",
+   "url": "https://www.bbc.co.uk/news/videos/ck240dg5n4gjo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1793096256000
+  },
+  {
+   "title": "Israel heads to polls for pivotal election defined by security and democracy",
+   "url": "https://www.bbc.co.uk/news/articles/c3j47l4kdez4o?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1793096040000
+  },
+  {
+   "title": "Budget measures to include fuel duty freeze and food tariff cuts",
+   "url": "https://www.bbc.co.uk/news/articles/c6d93gq1xdgno?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Business",
+   "published": 1793095831000
+  },
+  {
+   "title": "Apple says it will replace iPhone Duo handsets with screen problems",
+   "url": "https://www.bbc.co.uk/news/articles/c893zwlev2xpo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Tech",
+   "published": 1793093875000
+  },
+  {
+   "title": "Truce begins in Ukraine city where residents ate weeds to survive",
+   "url": "https://www.bbc.co.uk/news/articles/ck20wjnv3w0jo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1793092724000
+  },
+  {
+   "title": "Why it could take time for a new Israeli government to form",
+   "url": "https://www.bbc.co.uk/news/videos/c574p31l1l2no?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1793090250000
+  },
+  {
+   "title": "'A dream come true' - Harry Kane on his Ballon d'Or win",
+   "url": "https://www.bbc.co.uk/news/videos/cm9wznvx1l17o?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1793085761000
+  },
+  {
+   "title": "I'm a single mum on £41,000 and limit my weekly shop to £40 - it's hard",
+   "url": "https://www.bbc.co.uk/news/articles/cmx235r9wr3yo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Business",
+   "published": 1793083730000
+  },
+  {
+   "title": "New weather warnings as third storm set to hit Scotland",
+   "url": "https://www.bbc.co.uk/news/articles/c5vgj8xwyj1zo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Science",
+   "published": 1793082926000
+  },
+  {
+   "title": "Rise in sales of radios and tinned foods, say retailers, after call to stock up",
+   "url": "https://www.bbc.co.uk/news/articles/c5rmy84np001o?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Business",
+   "published": 1793082791000
+  },
+  {
+   "title": "Tiny zebra-striped bee in West a 'huge surprise'",
+   "url": "https://www.bbc.co.uk/news/articles/c3dxwjx7xpj0o?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Science",
+   "published": 1793082058000
+  },
+  {
+   "title": "Will the Budget pass Burnham's Makerfield test?",
+   "url": "https://www.bbc.co.uk/news/articles/cqzjx1e9ylv1o?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Business",
+   "published": 1793081864000
+  },
+  {
+   "title": "First-time buyers hoping for help from the Budget",
+   "url": "https://www.bbc.co.uk/news/articles/c317kpqv4njno?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Business",
+   "published": 1793081768000
+  },
+  {
+   "title": "Budget 2026: 'Surrey is a lovely place - but it can be stressful'",
+   "url": "https://www.bbc.co.uk/news/articles/c6e3xk7klnkwo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Business",
+   "published": 1793081569000
+  },
+  {
+   "title": "Donald Trump's biggest economic problem looks strangely familiar",
+   "url": "https://www.bbc.co.uk/news/articles/cwvg0ddz1z77o?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Business",
+   "published": 1793080871000
+  },
+  {
+   "title": "Jay-Z to perform at Super Bowl half-time show",
+   "url": "https://www.bbc.co.uk/news/articles/cq8ezg4364epo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1793077515000
+  },
+  {
+   "title": "Meghan to co-host Junior MasterChef Australia",
+   "url": "https://www.bbc.co.uk/news/articles/crgqwg3ll1v1o?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1793076236000
+  },
+  {
+   "title": "Jordan carries out deadly strike in Syria in retaliation for church attack",
+   "url": "https://www.bbc.co.uk/news/articles/cq8ezg6dy6xlo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1793068817000
+  },
+  {
+   "title": "Ex-FBI chief James Comey faces federal charges for third time",
+   "url": "https://www.bbc.co.uk/news/articles/ckly0xqjnlwvo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1793066487000
+  },
+  {
+   "title": "Lula's comeback in Brazil dents Trump's ambitions for Latin America",
+   "url": "https://www.bbc.co.uk/news/articles/cq62yg6rggj0o?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1793065598000
+  },
+  {
+   "title": "Opposition leader María Machado returns from exile to a Venezuela reshaped by Trump",
+   "url": "https://www.bbc.co.uk/news/articles/c8vgx3pvdeq1o?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1793061071000
+  },
+  {
+   "title": "The Exponential Time Hypothesis Is False [pdf]",
+   "url": "https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf",
+   "source": "Hacker News",
+   "topic": "Tech",
+   "published": 1793051955000
+  },
+  {
+   "title": "Three new discoveries in mathematics, computer science, and physics",
+   "url": "https://openai.com/index/building-scientific-understanding-with-academic-communities/",
+   "source": "Hacker News",
+   "topic": "Tech",
+   "published": 1793050528000
+  },
+  {
+   "title": "'Maxxing' selected as Dictionary.com word of the year",
+   "url": "https://www.bbc.co.uk/news/articles/cmy4xwp22xyqo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1793050313000
+  },
+  {
+   "title": "Business Daily",
+   "url": "https://www.bbc.co.uk/sounds/play/w3ct8grq?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Business",
+   "published": 1793050200000
+  },
+  {
+   "title": "Anthropic's blockbuster share listing - 5 surprising things we now know",
+   "url": "https://www.bbc.co.uk/news/articles/cwn8d7g29vd9o?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Tech",
+   "published": 1793044643000
+  },
+  {
+   "title": "Trump administration illegally fired James Comey's daughter, judge rules",
+   "url": "https://www.bbc.co.uk/news/articles/ck78px6glw3lo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1793042841000
+  },
+  {
+   "title": "Pope's South American trip to go ahead as planned after lung cancer surgery",
+   "url": "https://www.bbc.co.uk/news/articles/cjr4y5rq46p2o?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1793040379000
+  },
+  {
+   "title": "Political battle intensifies within Labour over Rosebank oil field",
+   "url": "https://www.bbc.co.uk/news/articles/c6zxj7dvxr5yo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Science",
+   "published": 1793038189000
+  },
+  {
+   "title": "'Safety first' as wedding guests stranded on island after Storm Boelo",
+   "url": "https://www.bbc.co.uk/news/articles/cqe9lykm93jmo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Science",
+   "published": 1793038179000
+  },
+  {
+   "title": "GPT-6.1 Terra",
+   "url": "https://openai.com/index/introducing-gpt-6-1-terra/",
+   "source": "Hacker News",
+   "topic": "Tech",
+   "published": 1793037677000
+  },
+  {
+   "title": "Sydney's new $5bn airport has one big problem: Getting there is tough",
+   "url": "https://www.bbc.co.uk/news/videos/c64g1wy4mdwmo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1793037610000
+  },
+  {
+   "title": "Israel and the US are both going to the polls - the consequences will be global",
+   "url": "https://www.bbc.co.uk/news/articles/crlykey9jywqo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1793032234000
+  },
+  {
+   "title": "Anthropic warns of 'catastrophic risk' to humankind ahead of blockbuster share listing",
+   "url": "https://www.bbc.co.uk/news/articles/cq398p1wd1evo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Tech",
+   "published": 1793032037000
+  },
+  {
+   "title": "Catholic bishops apologise for 'exploited' Trump meeting",
+   "url": "https://www.bbc.co.uk/news/articles/cw8rz1d286v3o?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1793029591000
+  },
+  {
+   "title": "How 'Lula's Army' WhatsApp channel helped turn Brazil election around",
+   "url": "https://www.bbc.co.uk/news/articles/cwz0vg4v3ndeo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1793029053000
+  },
+  {
+   "title": "Microsoft offers mass buyouts for roughly a quarter of its workforce",
+   "url": "https://www.seattletimes.com/business/microsoft/microsoft-offers-mass-buyouts-for-roughly-a-quarter-of-its-workforce/",
+   "source": "Hacker News",
+   "topic": "Tech",
+   "published": 1793028912000
+  },
+  {
+   "title": "Sebastian Raschka's from-scratch video course on building reasoning models",
+   "url": "https://magazine.sebastianraschka.com/p/building-reasoning-models",
+   "source": "Hacker News",
+   "topic": "Tech",
+   "published": 1793027519000
+  },
+  {
+   "title": "Part of Antarctica named after former BBC science correspondent",
+   "url": "https://www.bbc.co.uk/news/articles/ckvg7w919x09o?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Science",
+   "published": 1793026480000
   },
   {
    "title": "Celebrations in Serbia after veteran ruler Vučić loses election to student-led protest movement",
    "url": "https://www.bbc.co.uk/news/articles/cw5yn3xlprpmo?at_medium=RSS&at_campaign=rss",
    "source": "BBC",
    "topic": "World",
-   "published": 1793019136000
+   "published": 1793025292000
   },
   {
-   "title": "Storm Boelo leaves 90,000 without power as Met Office issues new wind warning",
-   "url": "https://www.bbc.co.uk/news/articles/cqm264jxxnxzo?at_medium=RSS&at_campaign=rss",
+   "title": "Anthropic S-1",
+   "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+   "source": "Hacker News",
+   "topic": "Tech",
+   "published": 1793019890000
+  },
+  {
+   "title": "Nurse killed in Ebola attack in DR Congo",
+   "url": "https://www.bbc.co.uk/news/articles/crx2dyd24188o?at_medium=RSS&at_campaign=rss",
    "source": "BBC",
-   "topic": "Science",
-   "published": 1793016020000
+   "topic": "World",
+   "published": 1793019478000
   },
   {
    "title": "Who is Lula? From ex-worker and prisoner to Brazil's president again",
@@ -168,6 +455,13 @@
    "source": "BBC",
    "topic": "World",
    "published": 1792976981000
+  },
+  {
+   "title": "Lula wins election after final votes tallied",
+   "url": "https://www.reuters.com/live/brazil-election-live-lula-bolsonaro-face-off-presidential-runoff-2026-10-25/",
+   "source": "Hacker News",
+   "topic": "Tech",
+   "published": 1792974667000
   },
   {
    "title": "Healey's Budget needs to sustain the stronger economy through gathering clouds",
@@ -348,7 +642,7 @@
    "title": "Musk says SpaceX restricted Ukraine's Starlink connection as service restored",
    "url": "https://www.bbc.co.uk/news/articles/cvx28ljp8n4xo?at_medium=RSS&at_campaign=rss",
    "source": "BBC",
-   "topic": "World",
+   "topic": "Science",
    "published": 1792918800000
   },
   {
@@ -518,6 +812,13 @@
    "source": "BBC",
    "topic": "Business",
    "published": 1792797091000
+  },
+  {
+   "title": "Birdwatching rewires the brain and slows cognitive decline",
+   "url": "https://www.bbc.com/future/article/20261019-birdwatching-rewires-the-brain-and-slows-cognitive-decline",
+   "source": "Hacker News",
+   "topic": "Tech",
+   "published": 1792793095000
   },
   {
    "title": "Dessa: Conversation Model trained only on speech",
@@ -852,7 +1153,7 @@
    "title": "Why is Elon Musk plotting a mega-merger of SpaceX and Tesla?",
    "url": "https://www.bbc.co.uk/news/articles/cr93z1e87e0do?at_medium=RSS&at_campaign=rss",
    "source": "BBC",
-   "topic": "Tech",
+   "topic": "Science",
    "published": 1792623843000
   },
   {
@@ -1015,69 +1316,6 @@
    "source": "Hacker News",
    "topic": "Tech",
    "published": 1792498648000
-  },
-  {
-   "title": "DeepInfer: High-performance inference framework for DeepSeek models",
-   "url": "https://github.com/deepseek-ai/DeepInfer",
-   "source": "Hacker News",
-   "topic": "Tech",
-   "published": 1792487334000
-  },
-  {
-   "title": "No more icons in every menu by default",
-   "url": "https://blog.jim-nielsen.com/2026/icons-in-every-menu/",
-   "source": "Hacker News",
-   "topic": "Tech",
-   "published": 1792470428000
-  },
-  {
-   "title": "OpenBSD 8.0",
-   "url": "https://www.openbsd.org/80.html",
-   "source": "Hacker News",
-   "topic": "Tech",
-   "published": 1792462000000
-  },
-  {
-   "title": "WhatsApp's help pages hid LLM instructions: dont recommend a regulator",
-   "url": "https://redact.dev/blog/whatsapp-help-pages-hidden-ai-instructions",
-   "source": "Hacker News",
-   "topic": "Tech",
-   "published": 1792452138000
-  },
-  {
-   "title": "Mission blasts off for Mars to grab a piece of its moon",
-   "url": "https://www.bbc.co.uk/news/articles/cmvgxvkv54w1o?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "Science",
-   "published": 1792439146000
-  },
-  {
-   "title": "MiniMax M3.1 Flash",
-   "url": "https://www.minimax.io/blog/minimax-m31f",
-   "source": "Hacker News",
-   "topic": "Tech",
-   "published": 1792427949000
-  },
-  {
-   "title": "I no longer care to work on any Ruby gems so I've archived all my repositories",
-   "url": "https://po-ru.com/2026/10/18/why-im-no-longer-updating-this-repository",
-   "source": "Hacker News",
-   "topic": "Tech",
-   "published": 1792427830000
-  },
-  {
-   "title": "DeepSeek banned from U.S. federal civilian agencies under new DHS order",
-   "url": "https://www.reuters.com/technology/us-banning-chinese-ai-deepseek-government-agency-it-systems-2026-10-19/",
-   "source": "Hacker News",
-   "topic": "Tech",
-   "published": 1792426606000
-  },
-  {
-   "title": "Wine ported to OpenBSD",
-   "url": "https://marc.info/?l=openbsd-ports&m=179236125692175",
-   "source": "Hacker News",
-   "topic": "Tech",
-   "published": 1792416934000
   }
  ]
 }
