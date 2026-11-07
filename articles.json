@@ -1,40 +1,278 @@
 {
- "updated": "2026-11-06T12:55:04.464Z",
+ "updated": "2026-11-07T11:42:53.513Z",
  "items": [
   {
-   "title": "Kenyan doomsday cult leader given life sentence for murdering 191 people",
-   "url": "https://www.bbc.co.uk/news/articles/cm5yne5984l0o?at_medium=RSS&at_campaign=rss",
+   "title": "Paraguay's president impeached and under house arrest after bank collapse",
+   "url": "https://www.bbc.co.uk/news/articles/c68jzzvjgdy9o?at_medium=RSS&at_campaign=rss",
    "source": "BBC",
    "topic": "World",
-   "published": 1793969644000
+   "published": 1794036000000
   },
   {
-   "title": "US rockets firm could take over mothballed Highland spaceport",
-   "url": "https://www.bbc.co.uk/news/articles/cmrlyy5xw276o?at_medium=RSS&at_campaign=rss",
+   "title": "New Forest wildfire restoration work begins",
+   "url": "https://www.bbc.co.uk/news/articles/cw98zzn7z04vo?at_medium=RSS&at_campaign=rss",
    "source": "BBC",
    "topic": "Science",
-   "published": 1793969243000
+   "published": 1794035673000
   },
   {
-   "title": "PM tells firms to publish salaries in job adverts ahead of new law",
-   "url": "https://www.bbc.co.uk/news/articles/cmd9343z3zw2o?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "Business",
-   "published": 1793968949000
-  },
-  {
-   "title": "Tanzanian opposition leader found guilty of inciting unrest but acquitted of treason",
-   "url": "https://www.bbc.co.uk/news/articles/ckp8g4pm0y4lo?at_medium=RSS&at_campaign=rss",
+   "title": "Pope in 'pretty good health' as he starts Latin America tour",
+   "url": "https://www.bbc.co.uk/news/articles/c60e0001ve9wo?at_medium=RSS&at_campaign=rss",
    "source": "BBC",
    "topic": "World",
-   "published": 1793968904000
+   "published": 1794034788000
+  },
+  {
+   "title": "One of the year's most prolific meteor showers to light up the night sky this weekend",
+   "url": "https://www.bbc.co.uk/weather/articles/cmlykqq7zg9zo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Science",
+   "published": 1794017008000
+  },
+  {
+   "title": "'My mortgage is going up £200': How rising interest rates are hitting people's pockets",
+   "url": "https://www.bbc.co.uk/news/articles/c617kjqjvk12o?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Business",
+   "published": 1794015696000
+  },
+  {
+   "title": "This man refused life-saving treatment because of his religion - days later the rules changed",
+   "url": "https://www.bbc.co.uk/news/articles/cx5ynly549njo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1794014867000
+  },
+  {
+   "title": "The young Somali woman changing how the world sees Mogadishu",
+   "url": "https://www.bbc.co.uk/news/articles/cq0k0lg48705o?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1794014389000
+  },
+  {
+   "title": "Cornell faculty pass no-confidence vote over leadership's handling of Jane Doe allegations",
+   "url": "https://www.bbc.co.uk/news/articles/c933xxl8yv0go?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1794008768000
+  },
+  {
+   "title": "Libghostty 1.0",
+   "url": "https://mitchellh.com/writing/libghostty-1-0",
+   "source": "Hacker News",
+   "topic": "Tech",
+   "published": 1794007852000
+  },
+  {
+   "title": "With Stephen Miller pick, Trump readies for a battle",
+   "url": "https://www.bbc.co.uk/news/articles/crp3gg2z171go?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1794007455000
+  },
+  {
+   "title": "Elon Musk appears to signal the end of the road for Cybertruck",
+   "url": "https://www.bbc.co.uk/news/articles/cq1j33w7d232o?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Tech",
+   "published": 1794001790000
+  },
+  {
+   "title": "AI stocks climb after trillions wiped from market values",
+   "url": "https://www.bbc.co.uk/news/articles/c35ynnpzdq51o?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Tech",
+   "published": 1793999185000
+  },
+  {
+   "title": "A Jev that can ask Opus for help gives Opus accuracy at 4x lower cost",
+   "url": "https://hightouch.com/blog/llm-judges-identity-resolution",
+   "source": "Hacker News",
+   "topic": "Tech",
+   "published": 1793994531000
+  },
+  {
+   "title": "Why the US midterms sparked an AI stock selloff",
+   "url": "https://www.bbc.co.uk/news/articles/crlykkzwwpydo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Tech",
+   "published": 1793989936000
+  },
+  {
+   "title": "Spain's rail authorities face European fraud probe after Urda rail disaster",
+   "url": "https://www.bbc.co.uk/news/articles/c6x2wwnz5445o?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1793987042000
+  },
+  {
+   "title": "Why smoky bacon crisps threaten to reignite rows over EU rules",
+   "url": "https://www.bbc.co.uk/news/articles/cm1dwwqrr1kvo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Business",
+   "published": 1793985578000
+  },
+  {
+   "title": "Dozens of Democrats eyeing 2028 presidential run, says former Obama aide",
+   "url": "https://www.bbc.co.uk/news/articles/cx8dzzy8n713o?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1793983861000
+  },
+  {
+   "title": "How climate change worsens heatwaves, droughts, wildfires and floods",
+   "url": "https://www.bbc.co.uk/news/articles/cy4dgp1p3p1o?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Science",
+   "published": 1793983410000
+  },
+  {
+   "title": "Food bank to close amid rising costs",
+   "url": "https://www.bbc.co.uk/news/articles/cqrkyyj6rx7ro?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Business",
+   "published": 1793983343000
+  },
+  {
+   "title": "A really simple guide to climate change",
+   "url": "https://www.bbc.co.uk/news/articles/c9w15nggj58o?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Science",
+   "published": 1793983251000
+  },
+  {
+   "title": "What is the Paris Agreement and why does 1.5C matter?",
+   "url": "https://www.bbc.co.uk/news/articles/c93d59d4zy1o?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Science",
+   "published": 1793983147000
+  },
+  {
+   "title": "What is net zero and is the UK on track to achieve it?",
+   "url": "https://www.bbc.co.uk/news/articles/cx238yyr40qo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Science",
+   "published": 1793982171000
+  },
+  {
+   "title": "Winter support for residents facing cost pressures",
+   "url": "https://www.bbc.co.uk/news/articles/cm20rrer25ezo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Business",
+   "published": 1793982138000
+  },
+  {
+   "title": "Spate of bomb threats poses serious challenge to airline industry",
+   "url": "https://www.bbc.co.uk/news/articles/cv8ezz9yn6pyo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1793981924000
+  },
+  {
+   "title": "Four midterms takeaways for 2028 White House race",
+   "url": "https://www.bbc.co.uk/news/articles/cq1m41n3v7mmo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1793981542000
   },
   {
    "title": "Two dead after bus crashes in France, officials say",
    "url": "https://www.bbc.co.uk/news/articles/cmly00l4p3lwo?at_medium=RSS&at_campaign=rss",
    "source": "BBC",
    "topic": "World",
-   "published": 1793968053000
+   "published": 1793979232000
+  },
+  {
+   "title": "Judge blocks construction of Trump's massive arch after federal agency approval",
+   "url": "https://www.bbc.co.uk/news/articles/cq99zd93ryvko?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1793979042000
+  },
+  {
+   "title": "Wales scraps controversial Uganda tree-planting scheme",
+   "url": "https://www.bbc.co.uk/news/articles/cqm26m2l4p7eo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Science",
+   "published": 1793978864000
+  },
+  {
+   "title": "PM tells firms to publish salaries in job adverts ahead of new law",
+   "url": "https://www.bbc.co.uk/news/articles/cmd9343z3zw2o?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Business",
+   "published": 1793978743000
+  },
+  {
+   "title": "New wave of bomb threats hit European airlines",
+   "url": "https://www.bbc.co.uk/news/articles/cq62yy064vjpo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1793978735000
+  },
+  {
+   "title": "Watch: Is it the end of the road for Tesla's Cybertruck?",
+   "url": "https://www.bbc.co.uk/news/videos/cv8ezz9ll7nyo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1793977323000
+  },
+  {
+   "title": "Tanzanian opposition leader found guilty of inciting unrest but acquitted of treason",
+   "url": "https://www.bbc.co.uk/news/articles/ckp8g4pm0y4lo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1793977028000
+  },
+  {
+   "title": "Workers' rights 'second place' to economic growth",
+   "url": "https://www.bbc.co.uk/news/videos/cq369l9r634ro?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Business",
+   "published": 1793976769000
+  },
+  {
+   "title": "Kenyan doomsday cult leader given life sentence for murdering 191 people",
+   "url": "https://www.bbc.co.uk/news/articles/cm5yne5984l0o?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1793976363000
+  },
+  {
+   "title": "Global stocks plunge as fears over US AI slowdown spread to Asia and Europe",
+   "url": "https://www.bbc.co.uk/news/articles/cmn04705rd8jo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Tech",
+   "published": 1793971550000
+  },
+  {
+   "title": "US midterm results spark fears in Israel over future of two countries' ties",
+   "url": "https://www.bbc.co.uk/news/articles/cx30ee8018lvo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1793971424000
+  },
+  {
+   "title": "Russian extremist group denies sending hoax bomb threats",
+   "url": "https://www.bbc.co.uk/news/articles/cm2d66n0lx1yo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1793969498000
+  },
+  {
+   "title": "US rockets firm eyes up mothballed Highland spaceport",
+   "url": "https://www.bbc.co.uk/news/articles/cmrlyy5xw276o?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Science",
+   "published": 1793969243000
+  },
+  {
+   "title": "Tesla to wind down Cybertruck production",
+   "url": "https://www.nbcnews.com/tech/tech-news/tesla-wind-cybertruck-production-years-poor-sales-markets-rcna607817",
+   "source": "Hacker News",
+   "topic": "Tech",
+   "published": 1793967231000
   },
   {
    "title": "'I've taken an extra job to pay for heating oil'",
@@ -44,13 +282,6 @@
    "published": 1793965235000
   },
   {
-   "title": "Global stocks plunge as fears over US AI slowdown spread to Asia and Europe",
-   "url": "https://www.bbc.co.uk/news/articles/cmn04705rd8jo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "Tech",
-   "published": 1793964010000
-  },
-  {
    "title": "Could you live on a remote island as a job?",
    "url": "https://www.bbc.co.uk/news/videos/c6kg77jqpwk2o?at_medium=RSS&at_campaign=rss",
    "source": "BBC",
@@ -58,11 +289,11 @@
    "published": 1793960058000
   },
   {
-   "title": "Elon Musk appears to signal the end of the road for Cybertruck",
-   "url": "https://www.bbc.co.uk/news/articles/cq1j33w7d232o?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
+   "title": "Dutch 'idealist' bank ASN blocks non-Google Android, including GrapheneOS",
+   "url": "https://github.com/PrivSec-dev/banking-apps-compat-report/issues/105",
+   "source": "Hacker News",
    "topic": "Tech",
-   "published": 1793959024000
+   "published": 1793957232000
   },
   {
    "title": "How does it affect me if share prices fall?",
@@ -93,11 +324,25 @@
    "published": 1793951779000
   },
   {
+   "title": "Blender's UI and Runtime: Much Faster Than GPUI",
+   "url": "https://github.com/ppmpreetham/BUI",
+   "source": "Hacker News",
+   "topic": "Tech",
+   "published": 1793950835000
+  },
+  {
    "title": "Major construction ongoing near Iran missile bases, satellite images suggest",
    "url": "https://www.bbc.co.uk/news/articles/ckjrwx1r2d5ro?at_medium=RSS&at_campaign=rss",
    "source": "BBC",
    "topic": "World",
    "published": 1793950421000
+  },
+  {
+   "title": "Britain to make salary disclosure in job ads mandatory",
+   "url": "https://www.reuters.com/business/world-at-work/britain-make-salary-disclosure-job-ads-mandatory-2026-11-05/",
+   "source": "Hacker News",
+   "topic": "Tech",
+   "published": 1793949724000
   },
   {
    "title": "Macau jails pro-democracy campaigner in city's first national security case",
@@ -173,8 +418,15 @@
    "title": "Delhi's toxic winter air is back - is the Indian capital prepared for pollution?",
    "url": "https://www.bbc.co.uk/news/articles/cm78p0n09q3xo?at_medium=RSS&at_campaign=rss",
    "source": "BBC",
-   "topic": "World",
+   "topic": "Science",
    "published": 1793920613000
+  },
+  {
+   "title": "Cuban: Facebook knowingly runs AI deepfake scam ads; docs say $16B fraud revenue",
+   "url": "https://finance.yahoo.com/technology/ai/articles/mark-cuban-says-facebook-knowingly-213000020.html",
+   "source": "Hacker News",
+   "topic": "Tech",
+   "published": 1793920197000
   },
   {
    "title": "California governor commutes sentences for state's 548 death row inmates",
@@ -287,6 +539,13 @@
    "source": "BBC",
    "topic": "Business",
    "published": 1793898595000
+  },
+  {
+   "title": "Window Sweaters",
+   "url": "https://github.com/saragordic/window-sweaters",
+   "source": "Hacker News",
+   "topic": "Tech",
+   "published": 1793897414000
   },
   {
    "title": "Motorola Signature 27 with GrapheneOS support",
@@ -1722,265 +1981,6 @@
    "source": "BBC",
    "topic": "Science",
    "published": 1793454067000
-  },
-  {
-   "title": "Serbia just elected the world's brainiest parliament",
-   "url": "https://www.science.org/content/article/serbia-just-elected-world-s-brainiest-parliament",
-   "source": "Hacker News",
-   "topic": "Tech",
-   "published": 1793442090000
-  },
-  {
-   "title": "CCTV and zip ties: How US mail-in votes are secured and counted",
-   "url": "https://www.bbc.co.uk/news/videos/cw4g1vlj4v2jo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1793438174000
-  },
-  {
-   "title": "Hundreds evacuated from Russian-occupied Oleshky during rare Ukraine ceasefire",
-   "url": "https://www.bbc.co.uk/news/articles/c60me298k1yeo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1793436575000
-  },
-  {
-   "title": "Rewilding project aims to restore peatland",
-   "url": "https://www.bbc.co.uk/news/articles/crq8nw0q7d5ko?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "Science",
-   "published": 1793429910000
-  },
-  {
-   "title": "Spain train disaster clouds Sánchez chances of re-election",
-   "url": "https://www.bbc.co.uk/news/articles/cmeweppr990qo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1793425461000
-  },
-  {
-   "title": "Suited and booted: How Joseph Kabila went from president to rebel leader",
-   "url": "https://www.bbc.co.uk/news/articles/cr3wv311dwnlo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1793421127000
-  },
-  {
-   "title": "The fight to save Canadian town threatened by Trump's tariffs",
-   "url": "https://www.bbc.co.uk/news/articles/cmly016ep243o?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1793414365000
-  },
-  {
-   "title": "Why North Korea's 'elite' hackers are the prime suspect in major Binance hack",
-   "url": "https://www.bbc.co.uk/news/articles/ck9dz3v7z7v3o?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "Tech",
-   "published": 1793412739000
-  },
-  {
-   "title": "The Indian chef who brought curry to America - then vanished",
-   "url": "https://www.bbc.co.uk/news/articles/crm941n0413o?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1793412136000
-  },
-  {
-   "title": "Postgres 19 is late because so many more bugs are being found now",
-   "url": "http://rhaas.blogspot.com/2026/10/postgres-19-is-late-and-its-ais-fault.html",
-   "source": "Hacker News",
-   "topic": "Tech",
-   "published": 1793410736000
-  },
-  {
-   "title": "Responsible or panicked? Meet the people around the world already preparing for crisis",
-   "url": "https://www.bbc.co.uk/news/articles/ckreypn92w49o?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1793410353000
-  },
-  {
-   "title": "Global nature talks reach deal but money remains an issue",
-   "url": "https://www.bbc.co.uk/news/articles/cw1l32qyj8pqo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "Science",
-   "published": 1793410025000
-  },
-  {
-   "title": "Police deployed during stand-off over control of top Poland court",
-   "url": "https://www.bbc.co.uk/news/articles/crz9824d5e88o?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1793409103000
-  },
-  {
-   "title": "US approves sale of 500 Patriot missiles to Ukraine",
-   "url": "https://www.bbc.co.uk/news/articles/c3vgxznlx7jzo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1793407243000
-  },
-  {
-   "title": "'The necktie is dead': How US midterm candidates are dressing for votes",
-   "url": "https://www.bbc.co.uk/news/articles/ckq6nz4286r4o?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1793405763000
-  },
-  {
-   "title": "UK could see 10 days without rain after 'wettest week in two years'",
-   "url": "https://www.bbc.co.uk/weather/articles/cq98zrwd42jzo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "Science",
-   "published": 1793405191000
-  },
-  {
-   "title": "He questioned Thailand's monarchy dressed as Harry Potter. Now he's in jail for 34 years",
-   "url": "https://www.bbc.co.uk/news/articles/cmjwepvd0qq9o?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1793402776000
-  },
-  {
-   "title": "How has the ceasefire in Russian-occupied Oleshky been unfolding?",
-   "url": "https://www.bbc.co.uk/news/videos/cmp3gp2vg078o?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1793402357000
-  },
-  {
-   "title": "G20 'family photo' cancelled after protests over presence of Russian minister",
-   "url": "https://www.bbc.co.uk/news/articles/cmd6dp2y576do?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1793398312000
-  },
-  {
-   "title": "Soaring cost of Halloween treats spooks shoppers",
-   "url": "https://www.bbc.co.uk/news/articles/cr0qk25p1yeno?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "Business",
-   "published": 1793396072000
-  },
-  {
-   "title": "Crypto giant Binance attempting to recover $6.3bn stolen in hack linked to North Korea",
-   "url": "https://www.bbc.co.uk/news/articles/cwe8lp7zy07zo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "Business",
-   "published": 1793394794000
-  },
-  {
-   "title": "They strangled us, says founder of Russian newspaper shut under pressure from authorities",
-   "url": "https://www.bbc.co.uk/news/articles/cmewepdr109do?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1793392911000
-  },
-  {
-   "title": "US tech stocks see sharp falls as AI spending nears $1tn",
-   "url": "https://www.bbc.co.uk/news/articles/cvwy72e0n72yo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "Tech",
-   "published": 1793392486000
-  },
-  {
-   "title": "Through Captain Jean-Luc Picard, Patrick Stewart taught us the measure of a man",
-   "url": "https://www.bostonglobe.com/2026/10/29/metro/patrick-stewart-picard-star-trek-the-next-generation/",
-   "source": "Hacker News",
-   "topic": "Tech",
-   "published": 1793391810000
-  },
-  {
-   "title": "City of London chief tops UK Black Powerlist",
-   "url": "https://www.bbc.co.uk/news/articles/c98rz4pxm4ymo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "Business",
-   "published": 1793383224000
-  },
-  {
-   "title": "Binance's $6.3bn crypto hack biggest in history",
-   "url": "https://www.bbc.co.uk/news/videos/c6m2dpz0yxn8o?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "Business",
-   "published": 1793382070000
-  },
-  {
-   "title": "US inmate Christa Pike says she woke up 'confused and in pain' after failed execution",
-   "url": "https://www.bbc.co.uk/news/articles/ck62ydn7dj9eo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1793380039000
-  },
-  {
-   "title": "Canada stops using 'avalanche dogs' for rescues in Rocky Mountains, stirring outrage",
-   "url": "https://www.bbc.co.uk/news/articles/cwdd8q8e9e9yo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1793379632000
-  },
-  {
-   "title": "Yorkshire Water boss resigns after firm downgraded",
-   "url": "https://www.bbc.co.uk/news/articles/ckzd623pldqgo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "Business",
-   "published": 1793376295000
-  },
-  {
-   "title": "AI isn't replacing SREs, it's deskilling them",
-   "url": "https://newsletter.signoz.io/p/ai-isnt-replacing-sres-its-deskilling",
-   "source": "Hacker News",
-   "topic": "Tech",
-   "published": 1793375538000
-  },
-  {
-   "title": "Attenborough-backed appeal secures £30m estate",
-   "url": "https://www.bbc.co.uk/news/articles/ck79pj8zn3vwo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "Science",
-   "published": 1793373817000
-  },
-  {
-   "title": "Democratic senator blames Egypt press crackdown on US military aid decision",
-   "url": "https://www.bbc.co.uk/news/articles/c63r529wn2vzo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1793373431000
-  },
-  {
-   "title": "Fears for mature Scots Pines burned by huge Highland wildfire",
-   "url": "https://www.bbc.co.uk/news/articles/cqd09pv4l3k0o?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "Science",
-   "published": 1793373137000
-  },
-  {
-   "title": "Northflank Breached",
-   "url": "https://status.northflank.com/",
-   "source": "Hacker News",
-   "topic": "Tech",
-   "published": 1793373031000
-  },
-  {
-   "title": "Six dead after helicopter crashes in northern Indian state",
-   "url": "https://www.bbc.co.uk/news/articles/cr93zxyn9eqeo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "Science",
-   "published": 1793372765000
-  },
-  {
-   "title": "Spain transport minister says he won't resign over high-speed rail disaster",
-   "url": "https://www.bbc.co.uk/news/articles/c6zxj2e5qlxxo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1793372619000
-  },
-  {
-   "title": "Pope Leo XIV becomes first pontiff to vote in a US election",
-   "url": "https://www.bbc.co.uk/news/articles/ckwyq2509p7xo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1793371702000
   }
  ]
 }
