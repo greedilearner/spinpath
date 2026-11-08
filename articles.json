@@ -1,12 +1,201 @@
 {
- "updated": "2026-11-07T11:42:53.513Z",
+ "updated": "2026-11-08T11:54:41.339Z",
  "items": [
   {
-   "title": "Paraguay's president impeached and under house arrest after bank collapse",
+   "title": "Government 'looking seriously' at banning under-16s from Vinted and eBay",
+   "url": "https://www.bbc.co.uk/news/articles/cmzxjvpqrjxro?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Tech",
+   "published": 1794137132000
+  },
+  {
+   "title": "What we know so far after Krakow gun attack",
+   "url": "https://www.bbc.co.uk/news/articles/cmd7q15drwgeo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1794136937000
+  },
+  {
+   "title": "How the deadly shooting in Krakow unfolded",
+   "url": "https://www.bbc.co.uk/news/videos/cq74p2zpwyjmo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1794130164000
+  },
+  {
+   "title": "Countryside managers prepare for climate change",
+   "url": "https://www.bbc.co.uk/news/articles/c3ewe99dzdlpo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Science",
+   "published": 1794122215000
+  },
+  {
+   "title": "Traders 'priced out' of £12,000 Christmas market pitches",
+   "url": "https://www.bbc.co.uk/news/articles/ckn8wew92xw1o?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Business",
+   "published": 1794121862000
+  },
+  {
+   "title": "Hundreds of seagrass shoots found in estuary",
+   "url": "https://www.bbc.co.uk/news/articles/ck1wvx3r9rgeo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Science",
+   "published": 1794121573000
+  },
+  {
+   "title": "Houthis say at least 33 killed in Saudi air strike",
+   "url": "https://www.bbc.co.uk/news/articles/c65yn1v99ypmo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1794110592000
+  },
+  {
+   "title": "The Trump coalition is shattered - what will Republicans do now?",
+   "url": "https://www.bbc.co.uk/news/articles/cm3r5gnxqz3jo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1794099159000
+  },
+  {
+   "title": "Germans wrestle with what to do with Hitler's destroyed Eagle's Nest retreat",
+   "url": "https://www.bbc.co.uk/news/articles/cm74pk1g51nko?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1794098939000
+  },
+  {
+   "title": "Can the Zelda remake capture the magic of the original?",
+   "url": "https://www.bbc.co.uk/news/articles/cm8xznl0n1q4o?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Tech",
+   "published": 1794098265000
+  },
+  {
+   "title": "Labubu hype seemed unstoppable, now the fluffy monster mania is dying",
+   "url": "https://www.bbc.co.uk/news/articles/cmvg652l927lo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Business",
+   "published": 1794092555000
+  },
+  {
+   "title": "Israel's president tasks opposition leader Eisenkot with forming government",
+   "url": "https://www.bbc.co.uk/news/articles/cmy8367lj5xlo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1794089999000
+  },
+  {
+   "title": "Ipswich Town's new club shop 'here to stay'",
+   "url": "https://www.bbc.co.uk/news/videos/cxnv0455zq5jo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Business",
+   "published": 1794087632000
+  },
+  {
+   "title": "'Flat', 'tired', 'cynical': Unusually gloomy Kiwis deliver New Zealand's tightest election in years",
+   "url": "https://www.bbc.co.uk/news/articles/cxr5yyg2nj9eo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1794087376000
+  },
+  {
+   "title": "Claude Code's \"Don't Ask Again\" exposes passwords in 1,122 public GitHub files",
+   "url": "https://apiiro.com/blog/coding-agents-leaking-secrets-github-dont-ask-again",
+   "source": "Hacker News",
+   "topic": "Tech",
+   "published": 1794084332000
+  },
+  {
+   "title": "Paraguay's former president charged after bank collapse",
    "url": "https://www.bbc.co.uk/news/articles/c68jzzvjgdy9o?at_medium=RSS&at_campaign=rss",
    "source": "BBC",
    "topic": "World",
-   "published": 1794036000000
+   "published": 1794079042000
+  },
+  {
+   "title": "US offers $20m reward for information about Iran's nuclear programme",
+   "url": "https://www.bbc.co.uk/news/articles/c6d091ev3p0jo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1794075278000
+  },
+  {
+   "title": "What I run on my $10 USD OpenStick homelab",
+   "url": "https://blog.bosscher.ch/posts/openstick/",
+   "source": "Hacker News",
+   "topic": "Tech",
+   "published": 1794075132000
+  },
+  {
+   "title": "The end of Microsoft Research's AI Frontiers group",
+   "url": "https://hunch.net/?p=13764006",
+   "source": "Hacker News",
+   "topic": "Tech",
+   "published": 1794074537000
+  },
+  {
+   "title": "Gaza wedding festival sees 250 couples married at the same time",
+   "url": "https://www.bbc.co.uk/news/videos/ckr5ygm78j76o?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1794074321000
+  },
+  {
+   "title": "Apple’s grey list: Words and phrases your iPhone won’t help you spell",
+   "url": "https://www.theguardian.com/technology/2026/nov/06/struggling-to-spell-male-chauvinist-pig-apple-grey-list-means-your-iphone-wont-help-you",
+   "source": "Hacker News",
+   "topic": "Tech",
+   "published": 1794071196000
+  },
+  {
+   "title": "Italian foreign minister says hackers leaked his personal data",
+   "url": "https://www.bbc.co.uk/news/articles/cr20wvge32j3o?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1794070206000
+  },
+  {
+   "title": "UK cannot 'cherry pick' EU single market deal, Barnier tells BBC",
+   "url": "https://www.bbc.co.uk/news/articles/c9kgjj206nzpo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1794064775000
+  },
+  {
+   "title": "Russian strikes wound nine and damage Ukraine's power network ahead of talks",
+   "url": "https://www.bbc.co.uk/news/articles/cm4g1nq8158po?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1794055776000
+  },
+  {
+   "title": "Every Mac comes with an (undocumented) family member classifier",
+   "url": "https://8rank.ai/game/apple-intelligence-personal-knowledge-graph",
+   "source": "Hacker News",
+   "topic": "Tech",
+   "published": 1794044763000
+  },
+  {
+   "title": "Need for Speed Underground 2 online in the browser",
+   "url": "https://nfsu2.xyz/",
+   "source": "Hacker News",
+   "topic": "Tech",
+   "published": 1794044196000
+  },
+  {
+   "title": "Texas mayor instructs police to limit co-operation with ICE",
+   "url": "https://www.bbc.co.uk/news/articles/c8dx33d22zkro?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1794039355000
+  },
+  {
+   "title": "Meghan's father Thomas Markle under house arrest after child sex abuse material charge",
+   "url": "https://www.bbc.co.uk/news/articles/cqgkvv8m8pgyo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1794036464000
   },
   {
    "title": "New Forest wildfire restoration work begins",
@@ -30,7 +219,7 @@
    "published": 1794017008000
   },
   {
-   "title": "'My mortgage is going up £200': How rising interest rates are hitting people's pockets",
+   "title": "'My mortgage is going up £200 a month': How rising interest rates are hitting people's pockets",
    "url": "https://www.bbc.co.uk/news/articles/c617kjqjvk12o?at_medium=RSS&at_campaign=rss",
    "source": "BBC",
    "topic": "Business",
@@ -1764,223 +1953,6 @@
    "source": "BBC",
    "topic": "World",
    "published": 1793534268000
-  },
-  {
-   "title": "Restrooms along the Norwegian Scenic Routes",
-   "url": "https://www.visitnorway.com/plan-your-trip/travel-tips-a-z/norwegian-scenic-routes/worlds-best-toilets/",
-   "source": "Hacker News",
-   "topic": "Tech",
-   "published": 1793530078000
-  },
-  {
-   "title": "Spill from vandalised home oil tank kills 13 birds",
-   "url": "https://www.bbc.co.uk/news/videos/crwyd2lyj15go?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "Science",
-   "published": 1793523476000
-  },
-  {
-   "title": "Energy bills help 'doesn't go far enough'",
-   "url": "https://www.bbc.co.uk/news/articles/cqgkvpnj7l7yo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "Business",
-   "published": 1793517306000
-  },
-  {
-   "title": "Rhino siblings celebrate first birthday with cake",
-   "url": "https://www.bbc.co.uk/news/articles/cqrkypljk526o?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "Science",
-   "published": 1793517095000
-  },
-  {
-   "title": "Diwali hampers to bring hope to families in need",
-   "url": "https://www.bbc.co.uk/news/articles/cm20wyg8j121o?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "Business",
-   "published": 1793517093000
-  },
-  {
-   "title": "India's opposition holds mega rally seeking election chief's resignation",
-   "url": "https://www.bbc.co.uk/news/articles/c60qk92dvlwgo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1793516455000
-  },
-  {
-   "title": "Oil tank vandalism results in waterfowl park 'nightmare'",
-   "url": "https://www.bbc.co.uk/news/articles/c64g14ene2epo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "Science",
-   "published": 1793515333000
-  },
-  {
-   "title": "'Rok' solid recognition for Slovenian space scientist",
-   "url": "https://www.bbc.co.uk/news/articles/cqx283v54zd6o?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "Science",
-   "published": 1793514937000
-  },
-  {
-   "title": "Rare damselfly spotted by restored chalk river",
-   "url": "https://www.bbc.co.uk/news/articles/c617kvqjd81jo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "Science",
-   "published": 1793513956000
-  },
-  {
-   "title": "The AI cost of JavaScript frameworks",
-   "url": "https://nolanlawson.com/2026/10/28/the-ai-cost-of-javascript-frameworks/",
-   "source": "Hacker News",
-   "topic": "Tech",
-   "published": 1793513179000
-  },
-  {
-   "title": "Democrats are used to heartbreak in Texas - could Talarico turn the tide?",
-   "url": "https://www.bbc.co.uk/news/articles/cmy0r2y6zeddo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1793513037000
-  },
-  {
-   "title": "Watch: Heidi Klum as giant severed hand for Halloween bash",
-   "url": "https://www.bbc.co.uk/news/videos/cj040yd1xdrlo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1793510762000
-  },
-  {
-   "title": "These firms you've never heard of are feeding fears the AI bubble could burst",
-   "url": "https://www.bbc.co.uk/news/articles/cje36degrgv5o?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "Tech",
-   "published": 1793497046000
-  },
-  {
-   "title": "How the downfall of Serbia's Vučiċ mirrored that of Hungary's Orbán",
-   "url": "https://www.bbc.co.uk/news/articles/c893z699q401o?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1793494506000
-  },
-  {
-   "title": "Alaska Senate candidate denies knowing about alleged plot to put two Dan Sullivans on ballot",
-   "url": "https://www.bbc.co.uk/news/articles/cmwyq2gg1yzzo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1793493972000
-  },
-  {
-   "title": "Judge dismisses Trump's lawsuit against Wall Street Journal over Epstein birthday book",
-   "url": "https://www.bbc.co.uk/news/articles/cwr5yj2lj9myo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1793493684000
-  },
-  {
-   "title": "Judge orders Trump administration to stop threatening US election officials",
-   "url": "https://www.bbc.co.uk/news/articles/c8qln1539y37o?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1793492853000
-  },
-  {
-   "title": "No more washing up: How Airbnb's new house rules have divided hosts and guests",
-   "url": "https://www.bbc.co.uk/news/articles/ckjwez8g5dyeo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "Business",
-   "published": 1793492225000
-  },
-  {
-   "title": "I've been stuck on a tiny Pacific island for years and can't get a transit visa to fly home",
-   "url": "https://www.bbc.co.uk/news/articles/cmq5npz5l5geo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1793487973000
-  },
-  {
-   "title": "Memdoor: A team of 5 Qwen3.8-27B models beats Fable 5 on LiveCodeBench Hard",
-   "url": "https://github.com/guregodevo/memdoor/tree/main/examples/workflows/team-solve",
-   "source": "Hacker News",
-   "topic": "Tech",
-   "published": 1793486772000
-  },
-  {
-   "title": "An Italian farmer found some unknown seeds in his attic and planted them",
-   "url": "https://www.smithsonianmag.com/science-nature/italian-farmer-found-unknown-seeds-attic-with-nothing-lose-planted-them-result-biblical-180989644/",
-   "source": "Hacker News",
-   "topic": "Tech",
-   "published": 1793486466000
-  },
-  {
-   "title": "Thousands demonstrate in Paris as protests spread across Europe",
-   "url": "https://www.bbc.co.uk/news/videos/ck0j0y87j303o?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1793482141000
-  },
-  {
-   "title": "HackerTube: YouTube built from videos recommended by HN",
-   "url": "https://karpathy.bearblog.dev/hacker-tube/",
-   "source": "Hacker News",
-   "topic": "Tech",
-   "published": 1793476613000
-  },
-  {
-   "title": "Anthropic blocks users for anything touching training larger models",
-   "url": "https://twitter.com/jiahaoshao1/status/2116475922190922088",
-   "source": "Hacker News",
-   "topic": "Tech",
-   "published": 1793475559000
-  },
-  {
-   "title": "'We came back from hell', say Ukrainians after years in Russia-occupied front-line city",
-   "url": "https://www.bbc.co.uk/news/articles/cqglw3k7djp1o?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1793474546000
-  },
-  {
-   "title": "TCP Use-After-Free: CVE-2026-98432 / CVSS 9.8",
-   "url": "https://atlasum.net/blog/cve-2026-98432-linux-ipv4-tcp-uaf",
-   "source": "Hacker News",
-   "topic": "Tech",
-   "published": 1793474190000
-  },
-  {
-   "title": "Ukrainian evacuees reunite with family after years trapped in Russia-occupied city",
-   "url": "https://www.bbc.co.uk/news/articles/cqx2818elrnzo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1793469215000
-  },
-  {
-   "title": "Emotional reunions with loved ones for Oleshky evacuees",
-   "url": "https://www.bbc.co.uk/news/videos/cmy83w0jwznpo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1793465747000
-  },
-  {
-   "title": "More than 5,000 die from Ebola in DR Congo's deadliest outbreak",
-   "url": "https://www.bbc.co.uk/news/articles/cj5ynryyep2yo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1793459780000
-  },
-  {
-   "title": "Ethiopian PM puts ministers through military training",
-   "url": "https://www.bbc.co.uk/news/articles/cmwyv2y7g9l8o?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1793456895000
-  },
-  {
-   "title": "Bute House protested by environmental campaigners",
-   "url": "https://www.bbc.co.uk/news/articles/c9rkypk1g7k0o?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "Science",
-   "published": 1793454067000
   }
  ]
 }
