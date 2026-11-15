@@ -1,26 +1,187 @@
 {
- "updated": "2026-11-14T12:08:58.839Z",
+ "updated": "2026-11-15T12:42:36.299Z",
  "items": [
   {
-   "title": "US has floated Ukraine ceding Donbas for Nato membership, Zelensky says",
-   "url": "https://www.bbc.co.uk/news/articles/cwvg2l312ylqo?at_medium=RSS&at_campaign=rss",
+   "title": "Three men sentenced to death in Jordan over fatal church mass shooting",
+   "url": "https://www.bbc.co.uk/news/articles/c3rrg9xgqlwpo?at_medium=RSS&at_campaign=rss",
    "source": "BBC",
    "topic": "World",
-   "published": 1794656480000
-  },
-  {
-   "title": "Watch: Cruise ship seen sinking after collision with cargo ship in New Orleans",
-   "url": "https://www.bbc.co.uk/news/videos/ck4gn4y77m40o?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1794655810000
+   "published": 1794740792000
   },
   {
    "title": "How to spot November's planetary parade in the pre-dawn sky",
    "url": "https://www.bbc.co.uk/weather/articles/cke8rr37lrryo?at_medium=RSS&at_campaign=rss",
    "source": "BBC",
    "topic": "Science",
-   "published": 1794654471000
+   "published": 1794739797000
+  },
+  {
+   "title": "Pope Leo speaks of community 'suffering' on visit to remote Andes town",
+   "url": "https://www.bbc.co.uk/news/articles/cr4gnz0lv2vlo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1794736645000
+  },
+  {
+   "title": "Fifth Canadian soldier dies from injuries caused by large fire at military base",
+   "url": "https://www.bbc.co.uk/news/articles/cmrlgn4x2xw8o?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1794734797000
+  },
+  {
+   "title": "Israel kills Hamas commander in strike on Gaza camp, officials say",
+   "url": "https://www.bbc.co.uk/news/articles/cqrkg4r6mg7xo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1794730661000
+  },
+  {
+   "title": "Copper wire upgrade behind US flight suspension, transport secretary says",
+   "url": "https://www.bbc.co.uk/news/articles/c6wy9lynq4qno?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1794726631000
+  },
+  {
+   "title": "Judge temporarily blocks Trump from closing Washington DC golf course for renovation",
+   "url": "https://www.bbc.co.uk/news/articles/c6j9mn7l14y0o?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1794712864000
+  },
+  {
+   "title": "My mother told me I would die if I sought treatment for Ebola - I am proof you can survive",
+   "url": "https://www.bbc.co.uk/news/articles/cmvg2e2q28w1o?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1794701215000
+  },
+  {
+   "title": "Judo champion shakes up French  presidential race with surprise candidacy",
+   "url": "https://www.bbc.co.uk/news/articles/c6dj1e8wyykmo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1794701211000
+  },
+  {
+   "title": "Beauty advent calendars can cost hundreds but are they value for money?",
+   "url": "https://www.bbc.co.uk/news/articles/cqn83l442724o?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Business",
+   "published": 1794700867000
+  },
+  {
+   "title": "SpaceX catches part of its Starship rocket on return to Earth",
+   "url": "https://www.bbc.co.uk/news/videos/cw23j8pkk421o?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Science",
+   "published": 1794698110000
+  },
+  {
+   "title": "How telecoms upgrade work sparked US flight chaos",
+   "url": "https://www.bbc.co.uk/news/articles/cqx2wyvyr3zzo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1794697887000
+  },
+  {
+   "title": "US has floated Ukraine ceding Donbas for Nato membership, Zelensky says",
+   "url": "https://www.bbc.co.uk/news/articles/cwvg2l312ylqo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1794695845000
+  },
+  {
+   "title": "New Orleans port files $1m lawsuit over 'miracle on the Mississippi' tanker collision",
+   "url": "https://www.bbc.co.uk/news/articles/cwe89y2r5j20o?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1794695226000
+  },
+  {
+   "title": "SpaceX successfully catches top of huge Starship rocket for first time",
+   "url": "https://www.bbc.co.uk/news/articles/ckregdgnl0xpo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Science",
+   "published": 1794694552000
+  },
+  {
+   "title": "'Can you believe it?': SpaceX catches part of its Starship rocket on return to Earth",
+   "url": "https://www.bbc.co.uk/news/videos/cwlym2gy3y3eo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1794694180000
+  },
+  {
+   "title": "SpaceX catches the Starship to end Flight 15",
+   "url": "https://www.spacex.com/launches/starship-flight-15",
+   "source": "Hacker News",
+   "topic": "Tech",
+   "published": 1794691344000
+  },
+  {
+   "title": "Watch: Cruise ship overturns after collision with tanker in New Orleans",
+   "url": "https://www.bbc.co.uk/news/videos/ck4gn4y77m40o?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1794683673000
+  },
+  {
+   "title": "Italy fines Meta €805m over accessing users' photos",
+   "url": "https://www.bbc.co.uk/news/articles/cwn83gxemk35o?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Tech",
+   "published": 1794680886000
+  },
+  {
+   "title": "Philippines wins first Eurovision Song Contest Asia",
+   "url": "https://www.bbc.co.uk/news/articles/cqrlgnx9dx6eo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1794680278000
+  },
+  {
+   "title": "Sotheby's auction of $180m Van Gogh challenged over claims it was 'sold under duress'",
+   "url": "https://www.bbc.co.uk/news/articles/cmwy05gg75lvo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1794679210000
+  },
+  {
+   "title": "Lovable apps expose passport details and more than 200K private messages",
+   "url": "https://www.crissyfield.de/research/lovable-en/",
+   "source": "Hacker News",
+   "topic": "Tech",
+   "published": 1794678190000
+  },
+  {
+   "title": "Trump, Putin and Xi plan historic joint meeting in China next week, White House says",
+   "url": "https://www.bbc.co.uk/news/articles/ckz74jzpy18do?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1794671635000
+  },
+  {
+   "title": "Nigeria cautions against travel via Ethiopia's main airport due to altitude",
+   "url": "https://www.bbc.co.uk/news/articles/cmz6qjpdy2wqo?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "World",
+   "published": 1794670974000
+  },
+  {
+   "title": "KDE: The documentary [video]",
+   "url": "https://tube.kockatoo.org/w/fFinNHfanLT7aBEb2B8y4c",
+   "source": "Hacker News",
+   "topic": "Tech",
+   "published": 1794663808000
+  },
+  {
+   "title": "Tech companies are trying to shift the concept of privacy again",
+   "url": "https://www.eff.org/deeplinks/2026/11/tech-companies-are-trying-shift-entire-concept-privacy-again",
+   "source": "Hacker News",
+   "topic": "Tech",
+   "published": 1794660345000
   },
   {
    "title": "Hungarian authorities uncover $20m during probe of Orbán-era minister",
@@ -42,13 +203,6 @@
    "source": "BBC",
    "topic": "Business",
    "published": 1794642350000
-  },
-  {
-   "title": "What we know about the ground stop and what to do if you're affected",
-   "url": "https://www.bbc.co.uk/news/articles/cqx2wyvyr3zzo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1794642131000
   },
   {
    "title": "Extreme weather leaves gardeners hedging their bets",
@@ -86,11 +240,11 @@
    "published": 1794637986000
   },
   {
-   "title": "Trump, Putin and Xi plan historic joint meeting in China next week, White House says",
-   "url": "https://www.bbc.co.uk/news/articles/ckz74jzpy18do?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1794635551000
+   "title": "Monkey Island: all 13 versions side by side",
+   "url": "https://monkeyisland.pages.dev/",
+   "source": "Hacker News",
+   "topic": "Tech",
+   "published": 1794630210000
   },
   {
    "title": "Nvidia allegedly engineered scarcity by funding AI startups to buy its GPUs",
@@ -133,13 +287,6 @@
    "source": "BBC",
    "topic": "World",
    "published": 1794614632000
-  },
-  {
-   "title": "Setback for SpaceX Starship rocket's double-catch test",
-   "url": "https://www.bbc.co.uk/news/articles/ckregdgnl0xpo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1794614461000
   },
   {
    "title": "'Miracle on Mississippi' - All passengers rescued after New Orleans cruise ship collision",
@@ -273,6 +420,13 @@
    "source": "BBC",
    "topic": "World",
    "published": 1794582580000
+  },
+  {
+   "title": "Jonathan Blow – If AI solved coding, why is my software still the same? [video]",
+   "url": "https://www.youtube.com/watch?v=IRK8h67ol7Q",
+   "source": "Hacker News",
+   "topic": "Tech",
+   "published": 1794582524000
   },
   {
    "title": "Climate action discussed at youth COP meeting",
@@ -439,7 +593,7 @@
    "title": "Ex-Nvidia CEO Jensen Huang summoned to testify before Congress about affair with alleged Chinese spy",
    "url": "https://www.bbc.co.uk/news/articles/cmq5vd1wdgz6o?at_medium=RSS&at_campaign=rss",
    "source": "BBC",
-   "topic": "Tech",
+   "topic": "Business",
    "published": 1794542221000
   },
   {
@@ -1221,6 +1375,13 @@
   },
   {
    "title": "Tech Life",
+   "url": "https://www.bbc.co.uk/sounds/play/live:bbc_world_service_south_asia?at_medium=RSS&at_campaign=rss",
+   "source": "BBC",
+   "topic": "Tech",
+   "published": 1794342600000
+  },
+  {
+   "title": "Tech Life",
    "url": "https://www.bbc.co.uk/sounds/play/w3ct8jyv?at_medium=RSS&at_campaign=rss",
    "source": "BBC",
    "topic": "Tech",
@@ -1351,6 +1512,13 @@
    "source": "BBC",
    "topic": "Business",
    "published": 1794321946000
+  },
+  {
+   "title": "Why get an expensive Pi when I have an old phone?",
+   "url": "https://so.long.thanks.fish/why-pi-when-i-have-an-old-phone/",
+   "source": "Hacker News",
+   "topic": "Tech",
+   "published": 1794320165000
   },
   {
    "title": "Civil servant who secretly held five jobs found guilty of fraud",
@@ -1932,174 +2100,6 @@
    "source": "Hacker News",
    "topic": "Tech",
    "published": 1794177335000
-  },
-  {
-   "title": "Nvidia CEO Jensen Huang's letter to staff about affair",
-   "url": "https://nvidianews.nvidia.com/news/a-message-to-our-company",
-   "source": "Hacker News",
-   "topic": "Tech",
-   "published": 1794176409000
-  },
-  {
-   "title": "'I treat all these people like they are victims', says doctor who treated Krakow shooting suspect",
-   "url": "https://www.bbc.co.uk/news/videos/c63elgqqz5y0o?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1794175512000
-  },
-  {
-   "title": "Aramco Tower hit in heart of Saudi capital as Houthis launch fresh strikes",
-   "url": "https://www.bbc.co.uk/news/articles/c6ly3mjx958eo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1794173856000
-  },
-  {
-   "title": "Statement from Nvidia board of directors",
-   "url": "https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors",
-   "source": "Hacker News",
-   "topic": "Tech",
-   "published": 1794169603000
-  },
-  {
-   "title": "Seven dead and more than 100 injured after trains collide in Egypt",
-   "url": "https://www.bbc.co.uk/news/articles/cwvgr20mmmevo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1794167882000
-  },
-  {
-   "title": "Outlook.com is rejecting email from domains without DMARC",
-   "url": "https://mailroute.net/blog/outlook-rejecting-email-without-dmarc",
-   "source": "Hacker News",
-   "topic": "Tech",
-   "published": 1794165632000
-  },
-  {
-   "title": "Goldman Sachs is pulling Claude Code from its bankers and traders",
-   "url": "https://www.thestateofai.com/news/goldman-sachs-claude-code-traders-bankers",
-   "source": "Hacker News",
-   "topic": "Tech",
-   "published": 1794161767000
-  },
-  {
-   "title": "'Devastating message' as ANC records worst-ever result in South Africa election",
-   "url": "https://www.bbc.co.uk/news/articles/cwrkygrxp11mo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1794160263000
-  },
-  {
-   "title": "Footage shows derailed carriages after fatal train crash in Egypt",
-   "url": "https://www.bbc.co.uk/news/videos/cw78p2km7d94o?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1794153957000
-  },
-  {
-   "title": "Government 'looking seriously' at banning under-16s from Vinted and eBay",
-   "url": "https://www.bbc.co.uk/news/articles/cmzxjvpqrjxro?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "Tech",
-   "published": 1794152245000
-  },
-  {
-   "title": "Homes and temples glow across India to mark Diwali",
-   "url": "https://www.bbc.co.uk/news/articles/cm70pdwz122ro?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1794148929000
-  },
-  {
-   "title": "Iran executes three men for 'armed unrest' after January protests",
-   "url": "https://www.bbc.co.uk/news/articles/ckly0ex633ydo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1794145070000
-  },
-  {
-   "title": "What we know so far after Krakow gun attack",
-   "url": "https://www.bbc.co.uk/news/articles/cmd7q15drwgeo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1794136937000
-  },
-  {
-   "title": "Writing as a thinking tool",
-   "url": "http://muratbuffalo.blogspot.com/2026/11/writing-as-thinking-tool.html",
-   "source": "Hacker News",
-   "topic": "Tech",
-   "published": 1794134512000
-  },
-  {
-   "title": "Llama-modchip: 284B DeepSeek on 64GB RAM, no GPU",
-   "url": "https://github.com/synchopate/llama-modchip",
-   "source": "Hacker News",
-   "topic": "Tech",
-   "published": 1794133324000
-  },
-  {
-   "title": "How the deadly shooting in Krakow unfolded",
-   "url": "https://www.bbc.co.uk/news/videos/cq74p2zpwyjmo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1794130164000
-  },
-  {
-   "title": "Countryside managers prepare for climate change",
-   "url": "https://www.bbc.co.uk/news/articles/c3ewe99dzdlpo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "Science",
-   "published": 1794122215000
-  },
-  {
-   "title": "Traders 'priced out' of £12,000 Christmas market pitches",
-   "url": "https://www.bbc.co.uk/news/articles/ckn8wew92xw1o?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "Business",
-   "published": 1794121862000
-  },
-  {
-   "title": "Hundreds of seagrass shoots found in estuary",
-   "url": "https://www.bbc.co.uk/news/articles/ck1wvx3r9rgeo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "Science",
-   "published": 1794121573000
-  },
-  {
-   "title": "Houthis say at least 33 killed in Saudi air strike",
-   "url": "https://www.bbc.co.uk/news/articles/c65yn1v99ypmo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1794110592000
-  },
-  {
-   "title": "Goodbye Claude, hello Pi",
-   "url": "https://caleb.software/posts/claude-to-pi.html",
-   "source": "Hacker News",
-   "topic": "Tech",
-   "published": 1794107508000
-  },
-  {
-   "title": "The Trump coalition is shattered - what will Republicans do now?",
-   "url": "https://www.bbc.co.uk/news/articles/cm3r5gnxqz3jo?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1794099159000
-  },
-  {
-   "title": "Germans wrestle with what to do with Hitler's destroyed Eagle's Nest retreat",
-   "url": "https://www.bbc.co.uk/news/articles/cm74pk1g51nko?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "World",
-   "published": 1794098939000
-  },
-  {
-   "title": "Can the Zelda remake capture the magic of the original?",
-   "url": "https://www.bbc.co.uk/news/articles/cm8xznl0n1q4o?at_medium=RSS&at_campaign=rss",
-   "source": "BBC",
-   "topic": "Tech",
-   "published": 1794098265000
   }
  ]
 }
